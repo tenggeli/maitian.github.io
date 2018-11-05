@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>青春 | 这是一片正在生长的麦田|乂小七</title>
+  <title>CentOS 6.4 下安装vsftpd | 这是一片正在生长的麦田|乂小七</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -103,21 +103,21 @@
 				    
 				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
 				    
 				    <li><a href="/categories/哲学/" class="animsition-link">哲学<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/学习方法/" class="animsition-link">学习方法<small>(7)</small></a></li>
+				    <li><a href="/categories/学习方法/" class="animsition-link">学习方法<small>(6)</small></a></li>
 				    
 				    <li><a href="/categories/摄影笔记/" class="animsition-link">摄影笔记<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/文学/" class="animsition-link">文学<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/时间管理/" class="animsition-link">时间管理<small>(2)</small></a></li>
+				    <li><a href="/categories/时间管理/" class="animsition-link">时间管理<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/未分类/" class="animsition-link">未分类<small>(5)</small></a></li>
 				    
@@ -226,34 +226,65 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2015-09-24T10:08:28.000Z" itemprop="datePublished">
-          2015-09-24
+      <time datetime="2015-11-07T04:55:35.000Z" itemprop="datePublished">
+          2015-11-07
       </time>
     
 </span>
-                <h1>青春</h1>
+                <h1>CentOS 6.4 下安装vsftpd</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>青春不是年华，而是心境；青春不是桃面、丹唇、柔膝，而是深沉的意志、恢宏的想像、炽热的感情；青春是生命的深泉涌流。</p>
-<p>青春气贯长虹，勇锐盖过怯懦，进取压倒苟安。如此锐气，二十后生有之，六旬男子则更多见。年岁有加，并非垂老；理想丢弃，方堕暮年。</p>
-<p>岁月悠悠，衰微只及肌肤；热忱抛却，颓唐必致灵魂。忧烦、惶恐、丧失自信，定使心灵扭曲，意气如灰。</p>
-<p>无论年届花甲，抑或二八芳龄，心中皆有生命之欢乐，奇迹之诱惑，孩童般天真久盛不衰。</p>
-<p>人的心灵应如浩淼瀚海，只有不断接纳美好、希望、欢乐、勇气和力量的百川，才能青春永驻、风华长存。</p>
-<p>一旦心海枯竭，锐气便被冰雪覆盖，玩世不恭、自暴自弃油然而生，即便年方二十，实已垂垂老矣；然则只要虚怀若谷，让喜悦、达观、仁爱充盈其间，你就有望在八十高龄告别尘寰时仍觉年轻。</p>
+      		<h4 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h4><p>vsftpd是Linux下比较著名的FTP服务器，搭建FTP服务器当然首选这个。 本文介绍了在CentOS 6.4下安装vsftpd、配置虚拟用户登录FTP的过程。</p>
+<h4 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h4><h2 id="一：安装vsftpd"><a href="#一：安装vsftpd" class="headerlink" title="一：安装vsftpd"></a>一：安装vsftpd</h2><p>查看是否已经安装vsftpd</p>
+<p>rpm -qa | grep vsftpd</p>
+<p>如果没有，就安装，并设置开机启动</p>
+<p>yum -y install vsftpd<br>chkconfig vsftpd on</p>
+<h2 id="二：基于虚拟用户的配置"><a href="#二：基于虚拟用户的配置" class="headerlink" title="二：基于虚拟用户的配置"></a>二：基于虚拟用户的配置</h2><p>所谓虚拟用户就是没有使用真实的帐户，只是通过映射到真实帐户和设置权限的目的。虚拟用户不能登录CentOS系统。</p>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>打开/etc/vsftpd/vsftpd.conf，做如下配置</p>
+<p>anonymous_enable=NO //设定不允许匿名访问<br>local_enable=YES //设定本地用户可以访问。注：如使用虚拟宿主用户，在该项目设定为NO的情况下所有虚拟用户将无法访问<br>chroot_list_enable=YES //使用户不能离开主目录<br>ascii_upload_enable=YES<br>ascii_download_enable=YES //设定支持ASCII模式的上传和下载功能<br>pam_service_name=vsftpd //PAM认证文件名。PAM将根据/etc/pam.d/vsftpd进行认证</p>
+<p>以下这些是关于vsftpd虚拟用户支持的重要配置项，默认vsftpd.conf中不包含这些设定项目，需要自己手动添加</p>
+<p>guest_enable=YES //设定启用虚拟用户功能<br>guest_username=ftp //指定虚拟用户的宿主用户，CentOS中已经有内置的ftp用户了<br>user_config_dir=/etc/vsftpd/vuser_conf //设定虚拟用户个人vsftp的CentOS FTP服务文件存放路径。存放虚拟用户个性的CentOS FTP服务文件(配置文件名=虚拟用户名</p>
+<h3 id="进行认证"><a href="#进行认证" class="headerlink" title="进行认证"></a>进行认证</h3><p>首先，安装Berkeley DB工具，很多人找不到db_load的问题就是没有安装这个包。</p>
+<p>yum install db4 db4-utils</p>
+<p>然后，创建用户密码文本/etc/vsftpd/vuser_passwd.txt ，注意奇行是用户名，偶行是密码</p>
+<p>test<br>123456</p>
+<p>接着，生成虚拟用户认证的db文件</p>
+<p>db_load -T -t hash -f /etc/vsftpd/vuser_passwd.txt /etc/vsftpd/vuser_passwd.db</p>
+<p>随后，编辑认证文件/etc/pam.d/vsftpd，全部注释掉原来语句，再增加以下两句：</p>
+<p>auth required pam_userdb.so db=/etc/vsftpd/vuser_passwd<br>account required pam_userdb.so db=/etc/vsftpd/vuser_passwd</p>
+<p>最后，创建虚拟用户配置文件</p>
+<p>mkdir /etc/vsftpd/vuser_conf/<br>vi /etc/vsftpd/vuser_conf/test  //文件名等于vuser_passwd.txt里面的账户名，否则下面设置无效</p>
+<p>内容如下</p>
+<p>local_root=/ftp/www  //虚拟用户根目录,根据实际情况修改<br>write_enable=YES  //可写<br>anon_umask=022 //掩码<br>anon_world_readable_only=NO<br>anon_upload_enable=YES<br>anon_mkdir_write_enable=YES<br>anon_other_write_enable=YES</p>
+<h3 id="设置Selinux"><a href="#设置Selinux" class="headerlink" title="设置Selinux"></a>设置Selinux</h3><p>setsebool -P ftp_home_dir=1   //设置ftp可以使用home目录<br>setsebool -P allow_ftpd_full_access=1   //设置ftp用户可以有所有权限</p>
+<h3 id="设置FTP根目录权限"><a href="#设置FTP根目录权限" class="headerlink" title="设置FTP根目录权限"></a>设置FTP根目录权限</h3><p>mkdir /ftp/www   //创建目录<br>chmod R 755 /ftp<br>chmod R 777 /ftp/www</p>
+<p>最新的vsftpd要求对主目录不能有写的权限所以ftp为755，主目录下面的子目录再设置777权限</p>
+<h3 id="设置防火墙"><a href="#设置防火墙" class="headerlink" title="设置防火墙"></a>设置防火墙</h3><p>打开/etc/sysconfig/iptables 在“-A INPUT –m state –state NEW –m tcp –p –dport 22 –j ACCEPT”，下添加：</p>
+<p>-A INPUT -m state –state NEW -m tcp -p -dport 21 -j ACCEPT</p>
+<p>然后保存，并关闭该文件，在终端内运行下面的命令，刷新防火墙配置：</p>
+<p>service iptables restart</p>
+<p>  OK，运行“service vsftpd start”，你就可以访问你的FTP服务器了。</p>
+<h2 id="配置PASV模式"><a href="#配置PASV模式" class="headerlink" title="配置PASV模式"></a>配置PASV模式</h2><p>vsftpd默认没有开启PASV模式，现在FTP只能通过PORT模式连接，要开启PASV默认需要通过下面的配置 打开/etc/vsftpd/vsftpd.conf，在末尾添加</p>
+<p>pasv_enable=YES   //开启PASV模式<br>pasv_min_port=40000   //最小端口号<br>pasv_max_port=40080   //最大端口号<br>pasv_promiscuous=YES</p>
+<p>在防火墙配置内开启40000到40080端口</p>
+<p>-A INPUT -m state –state NEW -m tcp -p -dport 40000:40080 -j ACCEPT</p>
+<p>重启iptabls和vsftpd</p>
+<p>service iptables restart<br>service vsftpd restart</p>
+<p>现在可以使用PASV模式连接你的FTP服务器了~   —————————————————————————————————————— 2014年12月02日添加： CentOS 7中默认使用Firewalld做防火墙，所以修改iptables后，在重启系统后，根本不管用。 Firewalld中添加端口方法如下： <strong>firewall-cmd –zone=public –add-port=3306/tcp –permanent</strong> <strong>firewall-cmd –reload</strong></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2015/09/24/e6-91-84-e5-bd-b1-e5-b8-b8-e7-94-a8-e6-8a-80-e5-b7-a7/" style="float: left;">
-        ← 摄影常用技巧
+    <a class="pull-left" href="/2015/11/28/e5-bc-98-e4-b8-80-e6-b3-95-e5-b8-8830-e5-8f-a5-e5-a4-84-e4-b8-96-e7-ae-b4-e8-a8-80/" style="float: left;">
+        ← 弘一法师30句处世箴言
     </a>
     
     
-    <a class="pull-right" href="/2015/09/24/e5-a5-b3-e5-84-bf-e7-9a-84-e6-95-85-e4-ba-8b/">
-        女儿的故事 →
+    <a class="pull-right" href="/2015/11/06/linux-e4-b8-8bphp-e5-ae-89-e8-a3-85redis-e6-89-a9-e5-b1-95/">
+        Linux下php安装Redis扩展 →
     </a>
     
 </nav>
