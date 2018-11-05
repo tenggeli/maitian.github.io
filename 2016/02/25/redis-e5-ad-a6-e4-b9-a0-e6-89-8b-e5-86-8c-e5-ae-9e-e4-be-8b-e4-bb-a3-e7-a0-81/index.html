@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>Redis学习手册(实例代码) | 这是一片正在生长的麦田|乂小七</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="这是一片正在生长的麦田|乂小七">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="这是一片麦田" />
+    <meta name="keywords" content="乂小七, 这是一片麦田 , PHP,Python" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="这是一片正在生长的麦田|乂小七" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close">
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/哲学/" class="animsition-link">哲学<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/学习方法/" class="animsition-link">学习方法<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/摄影笔记/" class="animsition-link">摄影笔记<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/文学/" class="animsition-link">文学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/时间管理/" class="animsition-link">时间管理<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/未分类/" class="animsition-link">未分类<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">这是一片正在生长的麦田|乂小七</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+</div>
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-02-25T04:33:16.000Z" itemprop="datePublished">
+          2016-02-25
+      </time>
+    
+    
+    | 
+    <a href="/tags/Redis/">Redis</a>
+    
+    
+</span>
+                <h1>Redis学习手册(实例代码)</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p> 在之前的博客中已经非常详细的介绍了Redis的各种操作命令、运行机制和服务器初始化参数配置。本篇博客是该系列博客中的最后一篇，在这里将给出基于Redis客户端组件访问并操作Redis服务器的代码示例。然而需要说明的是，由于Redis官方并未提供基于C接口的Windows平台客户端，因此下面的示例仅可运行于Linux/Unix平台。但是对于使用其它编程语言的开发者而言，如C#和Java，Redis则提供了针对这些语言的客户端组件，通过该方式，同样可以达到基于Windows平台与Redis服务器进行各种交互的目的。<br>    该篇博客中使用的客户端来自于Redis官方网站，是Redis推荐的基于C接口的客户端组件，见如下链接：<br><a href="https://github.com/antirez/hiredis" target="_blank" rel="noopener">https://github.com/antirez/hiredis</a><br>    在下面的代码示例中，将给出两种最为常用的Redis命令操作方式，既普通调用方式和基于管线的调用方式。  </p>
+<p><em>注：在阅读代码时请留意注释。</em></p>
+<p>_#include &lt;stdio.h&gt;</p>
+<p>#include &lt;stdlib.h&gt;</p>
+<p>#include &lt;stddef.h&gt;</p>
+<p>#include &lt;stdarg.h&gt;</p>
+<p>#include &lt;string.h&gt;</p>
+<p>#include &lt;assert.h&gt;</p>
+<p>#include &lt;hiredis.h&gt;</p>
+<p>void doTest()<br>{<br>    int timeout = 10000;<br>    struct timeval tv;<br>    tv.tv_sec = timeout / 1000;<br>    tv.tv_usec = timeout <em> 1000;<br>    //以带有超时的方式链接Redis服务器，同时获取与Redis连接的上下文对象。<br>    //该对象将用于其后所有与Redis操作的函数。<br>    redisContext</em> c = redisConnectWithTimeout(“192.168.149.137”,6379,tv);<br>    if (c-&gt;err) {<br>        redisFree(c);<br>        return;<br>    }<br>    const char<em> command1 = “set stest1 value1”;<br>    redisReply</em> r = (redisReply*)redisCommand(c,command1);<br>    //需要注意的是，如果返回的对象是NULL，则表示客户端和服务器之间出现严重错误，必须重新链接。<br>    //这里只是举例说明，简便起见，后面的命令就不再做这样的判断了。<br>    if (NULL == r) {<br>        redisFree(c);<br>        return;<br>    }<br>    //不同的Redis命令返回的数据类型不同，在获取之前需要先判断它的实际类型。<br>    //至于各种命令的返回值信息，可以参考Redis的官方文档，或者查看该系列博客的前几篇<br>    //有关Redis各种数据类型的博客。:)<br>    //字符串类型的set命令的返回值的类型是REDIS_REPLY_STATUS，然后只有当返回信息是”OK”<br>    //时，才表示该命令执行成功。后面的例子以此类推，就不再过多赘述了。<br>    if (!(r-&gt;type == REDIS_REPLY_STATUS &amp;&amp; strcasecmp(r-&gt;str,”OK”) == 0)) {<br>        printf(“Failed to execute command[%s].\n”,command1);<br>        freeReplyObject(r);<br>        redisFree(c);<br>        return;<br>    }<br>    //由于后面重复使用该变量，所以需要提前释放，否则内存泄漏。<br>    freeReplyObject(r);<br>    printf(“Succeed to execute command[%s].\n”,command1);</p>
+<pre><code>const char* command2 = &quot;strlen stest1&quot;;
+r = (redisReply*)redisCommand(c,command2);
+if (r-&gt;type != REDIS\_REPLY\_INTEGER) {
+    printf(&quot;Failed to execute command\[%s\].\\n&quot;,command2);
+    freeReplyObject(r);
+    redisFree(c);
+    return;
+}
+int length = r-&gt;integer;
+freeReplyObject(r);
+printf(&quot;The length of &apos;stest1&apos; is %d.\\n&quot;,length);
+printf(&quot;Succeed to execute command\[%s\].\\n&quot;,command2);
+
+const char* command3 = &quot;get stest1&quot;;
+r = (redisReply*)redisCommand(c,command3);
+if (r-&gt;type != REDIS\_REPLY\_STRING) {
+    printf(&quot;Failed to execute command\[%s\].\\n&quot;,command3);
+    freeReplyObject(r);
+    redisFree(c);
+    return;
+}
+printf(&quot;The value of &apos;stest1&apos; is %s.\\n&quot;,r-&gt;str);
+freeReplyObject(r);
+printf(&quot;Succeed to execute command\[%s\].\\n&quot;,command3);
+
+const char* command4 = &quot;get stest2&quot;;
+r = (redisReply*)redisCommand(c,command4);
+//这里需要先说明一下，由于stest2键并不存在，因此Redis会返回空结果，这里只是为了演示。
+if (r-&gt;type != REDIS\_REPLY\_NIL) {
+    printf(&quot;Failed to execute command\[%s\].\\n&quot;,command4);
+    freeReplyObject(r);
+    redisFree(c);
+    return;
+}
+freeReplyObject(r);
+printf(&quot;Succeed to execute command\[%s\].\\n&quot;,command4);
+
+const char* command5 = &quot;mget stest1 stest2&quot;;
+r = (redisReply*)redisCommand(c,command5);
+//不论stest2存在与否，Redis都会给出结果，只是第二个值为nil。
+//由于有多个值返回，因为返回应答的类型是数组类型。
+if (r-&gt;type != REDIS\_REPLY\_ARRAY) {
+    printf(&quot;Failed to execute command\[%s\].\\n&quot;,command5);
+    freeReplyObject(r);
+    redisFree(c);
+    //r-&gt;elements表示子元素的数量，不管请求的key是否存在，该值都等于请求是键的数量。
+    assert(2 == r-&gt;elements);
+    return;
+}
+for (int i = 0; i &lt; r-&gt;elements; ++i) {
+    redisReply* childReply = r-&gt;element\[i\];
+    //之前已经介绍过，get命令返回的数据类型是string。
+    //对于不存在key的返回值，其类型为REDIS\_REPLY\_NIL。
+    if (childReply-&gt;type == REDIS\_REPLY\_STRING)
+        printf(&quot;The value is %s.\\n&quot;,childReply-&gt;str);
+}
+//对于每一个子应答，无需使用者单独释放，只需释放最外部的redisReply即可。
+freeReplyObject(r);
+printf(&quot;Succeed to execute command\[%s\].\\n&quot;,command5);
+
+printf(&quot;Begin to test pipeline.\\n&quot;);
+//该命令只是将待发送的命令写入到上下文对象的输出缓冲区中，直到调用后面的
+//redisGetReply命令才会批量将缓冲区中的命令写出到Redis服务器。这样可以
+//有效的减少客户端与服务器之间的同步等候时间，以及网络IO引起的延迟。
+//至于管线的具体性能优势，可以考虑该系列博客中的管线主题。
+if (REDIS_OK != redisAppendCommand(c,command1)
+    || REDIS_OK != redisAppendCommand(c,command2)
+    || REDIS_OK != redisAppendCommand(c,command3)
+    || REDIS_OK != redisAppendCommand(c,command4)
+    || REDIS_OK != redisAppendCommand(c,command5)) {
+    redisFree(c);
+    return;
+}
+
+redisReply* reply = NULL;
+//对pipeline返回结果的处理方式，和前面代码的处理方式完全一直，这里就不再重复给出了。
+if (REDIS_OK != redisGetReply(c,(void**)&amp;reply)) {
+    printf(&quot;Failed to execute command\[%s\] with Pipeline.\\n&quot;,command1);
+    freeReplyObject(reply);
+    redisFree(c);
+}
+freeReplyObject(reply);
+printf(&quot;Succeed to execute command\[%s\] with Pipeline.\\n&quot;,command1);
+
+if (REDIS_OK != redisGetReply(c,(void**)&amp;reply)) {
+    printf(&quot;Failed to execute command\[%s\] with Pipeline.\\n&quot;,command2);
+    freeReplyObject(reply);
+    redisFree(c);
+}
+freeReplyObject(reply);
+printf(&quot;Succeed to execute command\[%s\] with Pipeline.\\n&quot;,command2);
+
+if (REDIS_OK != redisGetReply(c,(void**)&amp;reply)) {
+    printf(&quot;Failed to execute command\[%s\] with Pipeline.\\n&quot;,command3);
+    freeReplyObject(reply);
+    redisFree(c);
+}
+freeReplyObject(reply);
+printf(&quot;Succeed to execute command\[%s\] with Pipeline.\\n&quot;,command3);
+
+if (REDIS_OK != redisGetReply(c,(void**)&amp;reply)) {
+    printf(&quot;Failed to execute command\[%s\] with Pipeline.\\n&quot;,command4);
+    freeReplyObject(reply);
+    redisFree(c);
+}
+freeReplyObject(reply);
+printf(&quot;Succeed to execute command\[%s\] with Pipeline.\\n&quot;,command4);
+
+if (REDIS_OK != redisGetReply(c,(void**)&amp;reply)) {
+    printf(&quot;Failed to execute command\[%s\] with Pipeline.\\n&quot;,command5);
+    freeReplyObject(reply);
+    redisFree(c);
+}
+freeReplyObject(reply);
+printf(&quot;Succeed to execute command\[%s\] with Pipeline.\\n&quot;,command5);
+//由于所有通过pipeline提交的命令结果均已为返回，如果此时继续调用redisGetReply，
+//将会导致该函数阻塞并挂起当前线程，直到有新的通过管线提交的命令结果返回。
+//最后不要忘记在退出前释放当前连接的上下文对象。
+redisFree(c);
+return;
+</code></pre><p>}</p>
+<p>int main()<br>{<br>    doTest();<br>    return 0;<br>}</p>
+<p>//输出结果如下：<br>//Succeed to execute command[set stest1 value1].<br>//The length of ‘stest1’ is 6.<br>//Succeed to execute command[strlen stest1].<br>//The value of ‘stest1’ is value1.<br>//Succeed to execute command[get stest1].<br>//Succeed to execute command[get stest2].<br>//The value is value1.<br>//Succeed to execute command[mget stest1 stest2].<br>//Begin to test pipeline.<br>//Succeed to execute command[set stest1 value1] with Pipeline.<br>//Succeed to execute command[strlen stest1] with Pipeline.<br>//Succeed to execute command[get stest1] with Pipeline.<br>//Succeed to execute command[get stest2] with Pipeline.<br>//Succeed to execute command[mget stest1 stest2] with Pipeline._</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2016/02/26/centos-e4-b8-8bpip-e5-92-8cshadowsocks-e7-9a-84-e5-ae-89-e8-a3-85-e4-bd-bf-e7-94-a8/" style="float: left;">
+        ← CentOS下pip和shadowsocks的安装使用
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/02/25/redis-e5-ad-a6-e4-b9-a0-e6-89-8b-e5-86-8c-e5-86-85-e5-ad-98-e4-bc-98-e5-8c-96/">
+        Redis学习手册(内存优化) →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

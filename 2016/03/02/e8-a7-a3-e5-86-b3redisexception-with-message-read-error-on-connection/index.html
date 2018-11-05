@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>解决&#39;RedisException&#39; with message &#39;read error on connection&#39; | 这是一片正在生长的麦田|乂小七</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="这是一片正在生长的麦田|乂小七">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="这是一片麦田" />
+    <meta name="keywords" content="乂小七, 这是一片麦田 , PHP,Python" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="这是一片正在生长的麦田|乂小七" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close">
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/哲学/" class="animsition-link">哲学<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/学习方法/" class="animsition-link">学习方法<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/摄影笔记/" class="animsition-link">摄影笔记<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/文学/" class="animsition-link">文学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/时间管理/" class="animsition-link">时间管理<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/未分类/" class="animsition-link">未分类<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">这是一片正在生长的麦田|乂小七</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+</div>
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-03-02T01:30:23.000Z" itemprop="datePublished">
+          2016-03-02
+      </time>
+    
+    
+    | 
+    <a href="/tags/Redis/">Redis</a>
+    
+    
+</span>
+                <h1>解决'RedisException' with message 'read error on connection'</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>PS：原创文章，如需转载，请注明出处，谢谢！     </p>
+<p>本文地址：<a href="http://flyer0126.iteye.com/blog/1886635/" target="_blank" rel="noopener">http://flyer0126.iteye.com/blog/1886635</a></p>
+<pre><code>最近一直困扰的问题得到了解决。![吐舌头](http://www.iteye.com/javascripts/tinymce/plugins/emotions/img/smiley-tongue-out.gif &quot;吐舌头&quot;)
+
+项目中利用gearman实现异步处理，worker端涉及对mysql数据库及redis缓存的一系列操作，但是在实际的使用中发现很短时间后就会退出，开始查看log也没什么异常，通过程序端设置set\_time\_limit(0), try/catch 捕获异常、服务器端查看日志，通过strace 跟踪进程执行时的系统调用等等也没有什么改善，问题依旧，一时感觉很是无解啊。
+
+折腾至最后简化worker端功能，只简单实现redis的List 链表新增一项功能，结果没多长时间服务又停止了。这次查看日志有了新收获，通过查看php-fpm.log.error，发现如下一行提示：
+</code></pre><p>Txt代码  <img src="http://flyer0126.iteye.com/images/icon_star.png" alt="收藏代码"></p>
+<ol>
+<li><p>[14-Jun-2013 10:32:30] PHP Fatal error:  Uncaught exception ‘RedisException’ with message ‘read error on connection’ in XXXX:35  </p>
+<p>   经过查找各方资料，发现是php.ini文件中的一个配置项导致：</p>
+</li>
+</ol>
+<p>Conf代码  <img src="http://flyer0126.iteye.com/images/icon_star.png" alt="收藏代码"></p>
+<ol>
+<li><p>default_socket_timeout = 60  </p>
+<p>   由于redis扩展也是基于php 的socket方式实现，因此该参数值同样会起作用。</p>
+<p>   找到了问题就比较好解决了：</p>
+<p>1、直接修改php.ini，将其设置为我们想要的值（这个不推荐）</p>
+<p>2、在我们的脚本中通过以下方式设置，这样就比较灵活，不对其他脚本产生影响</p>
+</li>
+</ol>
+<p>Php代码  <img src="http://flyer0126.iteye.com/images/icon_star.png" alt="收藏代码"></p>
+<ol>
+<li>ini_set(‘default_socket_timeout’, -1);  //不超时  </li>
+</ol>
+<p>上面的代码可以应用在游戏消息通知方面，需要注意的是redis服务器配置中timeout的设置</p>
+<p>修改redis.conf, timeout 设为0</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2016/03/02/e5-a6-82-e4-bd-95-e5-9c-a8linux-e4-b8-8b-e5-ae-89-e8-a3-85-e5-92-8c-e5-8d-b8-e8-bd-bd-e8-bd-af-e4-bb-b6/" style="float: left;">
+        ← 如何在Linux下安装和卸载软件
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/02/26/centos-7-e4-b8-8b-e4-bd-bf-e7-94-a8-iptables/">
+        CentOS 7 下使用 iptables →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

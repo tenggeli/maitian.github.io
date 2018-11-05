@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>MySQL的学习--触发器 | 这是一片正在生长的麦田|乂小七</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="这是一片正在生长的麦田|乂小七">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="这是一片麦田" />
+    <meta name="keywords" content="乂小七, 这是一片麦田 , PHP,Python" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="这是一片正在生长的麦田|乂小七" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close">
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/哲学/" class="animsition-link">哲学<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/学习方法/" class="animsition-link">学习方法<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/摄影笔记/" class="animsition-link">摄影笔记<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/文学/" class="animsition-link">文学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/时间管理/" class="animsition-link">时间管理<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/未分类/" class="animsition-link">未分类<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">这是一片正在生长的麦田|乂小七</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+</div>
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-03-18T08:25:09.000Z" itemprop="datePublished">
+          2016-03-18
+      </time>
+    
+    
+    | 
+    <a href="/tags/触发器/">触发器</a>
+    
+    
+</span>
+                <h1>MySQL的学习--触发器</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>MySQL包含对触发器的支持。触发器是一种与表操作有关的数据库对象，当触发器所在表上出现指定事件时，将调用该对象，即表的操作事件触发表上的触发器的执行。</p>
+<h3 id="创建触发器"><a href="#创建触发器" class="headerlink" title="创建触发器"></a>创建触发器</h3><p>在MySQL中，创建触发器语法如下：</p>
+<p>CREATE TRIGGER trigger_name<br>trigger_time<br>trigger_event ON tbl_name FOR EACH ROW<br>trigger_stmt</p>
+<p>其中：</p>
+<p>trigger_name：标识触发器名称，用户自行指定；<br>trigger_time：标识触发时机，取值为 BEFORE 或 AFTER；<br>trigger_event：标识触发事件，取值为 INSERT、UPDATE 或 DELETE；<br>tbl_name：标识建立触发器的表名，即在哪张表上建立触发器；<br>trigger_stmt：触发器程序体，可以是一句SQL语句，或者用 BEGIN 和 END 包含的多条语句。</p>
+<p>由此可见，可以建立6种触发器，即：BEFORE INSERT、BEFORE UPDATE、BEFORE DELETE、AFTER INSERT、AFTER UPDATE、AFTER DELETE。</p>
+<p>另外有一个限制是不能同时在一个表上建立2个相同类型的触发器，因此在一个表上最多建立6个触发器。</p>
+<h3 id="trigger-event-详解"><a href="#trigger-event-详解" class="headerlink" title="trigger_event 详解"></a>trigger_event 详解</h3><p>MySQL 除了对 INSERT、UPDATE、DELETE 基本操作进行定义外，还定义了 LOAD DATA 和 REPLACE 语句，这两种语句也能引起上述6中类型的触发器的触发。</p>
+<p>LOAD DATA 语句用于将一个文件装入到一个数据表中，相当与一系列的 INSERT 操作。</p>
+<p>REPLACE 语句一般来说和 INSERT 语句很像，只是在表中有 primary key 或 unique 索引时，如果插入的数据和原来 primary key 或 unique 索引一致时，会先删除原来的数据，然后增加一条新数据，也就是说，一条 REPLACE 语句有时候等价于一条。</p>
+<p>INSERT 语句，有时候等价于一条 DELETE 语句加上一条 INSERT 语句。</p>
+<p>INSERT 型触发器：插入某一行时激活触发器，可能通过 INSERT、LOAD DATA、REPLACE 语句触发；<br>UPDATE 型触发器：更改某一行时激活触发器，可能通过 UPDATE 语句触发；<br>DELETE 型触发器：删除某一行时激活触发器，可能通过 DELETE、REPLACE 语句触发。</p>
+<h3 id="BEGIN-…-END-详解"><a href="#BEGIN-…-END-详解" class="headerlink" title="BEGIN … END 详解"></a>BEGIN … END 详解</h3><p>在MySQL中，BEGIN … END 语句的语法为：</p>
+<p>BEGIN [statement_list] END</p>
+<p>其中，statement_list 代表一个或多个语句的列表，列表内的每条语句都必须用分号（;）来结尾。<br>而在MySQL中，分号是语句结束的标识符，遇到分号表示该段语句已经结束，MySQL可以开始执行了。因此，解释器遇到statement_list 中的分号后就开始执行，然后会报出错误，因为没有找到和 BEGIN 匹配的 END。</p>
+<p>这时就会用到 DELIMITER 命令（DELIMITER 是定界符，分隔符的意思），它是一条命令，不需要语句结束标识，语法为：<br>DELIMITER new_delemiter<br>new_delemiter 可以设为1个或多个长度的符号，默认的是分号（;），我们可以把它修改为其他符号，如$：<br>DELIMITER $<br>在这之后的语句，以分号结束，解释器不会有什么反应，只有遇到了$，才认为是语句结束。注意，使用完之后，我们还应该记得把它给修改回来。</p>
+<h3 id="一个完整的创建触发器示例"><a href="#一个完整的创建触发器示例" class="headerlink" title="一个完整的创建触发器示例"></a>一个完整的创建触发器示例</h3><p>假设系统中有两个表：<br>班级表 class(班级号 classID, 班内学生数 stuCount)<br>学生表 student(学号 stuID, 所属班级号 classID)<br>要创建触发器来使班级表中的班内学生数随着学生的添加自动更新，代码如下：</p>
+<p><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></p>
+<p>DELIMITER $ create trigger tri_stuInsert after insert on student for each row begin declare c int; set c = (select stuCount from class where classID=new.classID); update class set stuCount = c + 1 where classID = new.classID; end$<br>DELIMITER ;</p>
+<p><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></p>
+<h3 id="变量详解"><a href="#变量详解" class="headerlink" title="变量详解"></a>变量详解</h3><p>MySQL 中使用 DECLARE 来定义一局部变量，该变量只能在 BEGIN … END 复合语句中使用，并且应该定义在复合语句的开头，</p>
+<p>即其它语句之前，语法如下：</p>
+<p>DECLARE var_name[,…] type [DEFAULT value]</p>
+<p>其中：<br>var_name 为变量名称，同 SQL 语句一样，变量名不区分大小写；type 为 MySQL 支持的任何数据类型；可以同时定义多个同类型的变量，用逗号隔开；变量初始值为 NULL，如果需要，可以使用 DEFAULT 子句提供默认值，值可以被指定为一个表达式。</p>
+<p>对变量赋值采用 SET 语句，语法为：</p>
+<p>SET var_name = expr [,var_name = expr] …</p>
+<h3 id="NEW-与-OLD-详解"><a href="#NEW-与-OLD-详解" class="headerlink" title="NEW 与 OLD 详解"></a>NEW 与 OLD 详解</h3><p>上述示例中使用了NEW关键字，和 MS SQL Server 中的 INSERTED 和 DELETED 类似，MySQL 中定义了 NEW 和 OLD，用来表示</p>
+<p>触发器的所在表中，触发了触发器的那一行数据。<br>具体地：<br>在 INSERT 型触发器中，NEW 用来表示将要（BEFORE）或已经（AFTER）插入的新数据；<br>在 UPDATE 型触发器中，OLD 用来表示将要或已经被修改的原数据，NEW 用来表示将要或已经修改为的新数据；<br>在 DELETE 型触发器中，OLD 用来表示将要或已经被删除的原数据；<br>使用方法： NEW.columnName （columnName 为相应数据表某一列名）<br>另外，OLD 是只读的，而 NEW 则可以在触发器中使用 SET 赋值，这样不会再次触发触发器，造成循环调用（如每插入一个学生前，都在其学号前加“2013”）。</p>
+<h3 id="查看触发器"><a href="#查看触发器" class="headerlink" title="查看触发器"></a>查看触发器</h3><p>和查看数据库（show databases;）查看表格（show tables;）一样，查看触发器的语法如下：</p>
+<p>SHOW TRIGGERS [FROM schema_name];</p>
+<p>其中，schema_name 即 Schema 的名称，在 MySQL 中 Schema 和 Database 是一样的，也就是说，可以指定数据库名，这样就</p>
+<p>不必先“USE database_name;”了。</p>
+<h3 id="删除触发器"><a href="#删除触发器" class="headerlink" title="删除触发器"></a>删除触发器</h3><p>和删除数据库、删除表格一样，删除触发器的语法如下：</p>
+<p>DROP TRIGGER [IF EXISTS] [schema_name.]trigger_name</p>
+<h3 id="触发器的执行顺序"><a href="#触发器的执行顺序" class="headerlink" title="触发器的执行顺序"></a>触发器的执行顺序</h3><p>我们建立的数据库一般都是 InnoDB 数据库，其上建立的表是事务性表，也就是事务安全的。这时，若SQL语句或触发器执行失败，MySQL 会回滚事务，有：</p>
+<p>①如果 BEFORE 触发器执行失败，SQL 无法正确执行。<br>②SQL 执行失败时，AFTER 型触发器不会触发。<br>③AFTER 类型的触发器执行失败，SQL 会回滚。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2016/03/23/mongodb-e6-95-b0-e6-8d-ae-e5-ba-93-e6-9c-aa-e6-8e-88-e6-9d-83-e8-ae-bf-e9-97-ae-e6-bc-8f-e6-b4-9e/" style="float: left;">
+        ← MongoDB数据库未授权访问漏洞
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/03/18/yii-e6-a1-86-e6-9e-b6-e9-87-8d-e7-94-a8-e7-9a-84-e5-b0-8f-e9-83-a8-e4-bb-b6/">
+        YII框架重用的小部件 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

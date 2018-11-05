@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>常用 Git 命令清单 | 这是一片正在生长的麦田|乂小七</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="这是一片正在生长的麦田|乂小七">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="这是一片麦田" />
+    <meta name="keywords" content="乂小七, 这是一片麦田 , PHP,Python" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="这是一片正在生长的麦田|乂小七" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close">
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/哲学/" class="animsition-link">哲学<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/学习方法/" class="animsition-link">学习方法<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/摄影笔记/" class="animsition-link">摄影笔记<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/文学/" class="animsition-link">文学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/时间管理/" class="animsition-link">时间管理<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/未分类/" class="animsition-link">未分类<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">这是一片正在生长的麦田|乂小七</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+</div>
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-04-09T02:09:24.000Z" itemprop="datePublished">
+          2016-04-09
+      </time>
+    
+    
+    | 
+    <a href="/tags/Git/">Git</a>
+    
+    
+</span>
+                <h1>常用 Git 命令清单</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>git基本命令及流程</p>
+<p><img src="https://img.readitlater.com/i/www.ruanyifeng.com/blogimg/asset/2015/bg2015120901/RS/w1408.png" alt=""></p>
+<p>下面是我整理的常用 Git 命令清单。几个专用名词的译名如下。</p>
+<blockquote>
+<ul>
+<li>Workspace：工作区</li>
+<li>Index / Stage：暂存区</li>
+<li>Repository：仓库区（或本地仓库）</li>
+<li>Remote：远程仓库</li>
+</ul>
+</blockquote>
+<h2 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h2><blockquote>
+<p># 在当前目录新建一个Git代码库<br>$ git init</p>
+<p># 新建一个目录，将其初始化为Git代码库<br>$ git init [project-name]</p>
+<p># 下载一个项目和它的整个代码历史<br>$ git clone [url]</p>
+</blockquote>
+<h2 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h2><p>Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
+<blockquote>
+<p># 显示当前的Git配置<br>$ git config –list</p>
+<p># 编辑Git配置文件<br>$ git config -e [–global]</p>
+<p># 设置提交代码时的用户信息<br>$ git config [–global] user.name “[name]“<br>$ git config [–global] user.email “[email address]“</p>
+</blockquote>
+<h2 id="三、增加-删除文件"><a href="#三、增加-删除文件" class="headerlink" title="三、增加/删除文件"></a>三、增加/删除文件</h2><blockquote>
+<p># 添加指定文件到暂存区<br>$ git add [file1] [file2] …</p>
+<p># 添加指定目录到暂存区，包括子目录<br>$ git add [dir]</p>
+<p># 添加当前目录的所有文件到暂存区<br>$ git add .</p>
+<p># 添加每个变化前，都会要求确认<br># 对于同一个文件的多处变化，可以实现分次提交<br>$ git add -p</p>
+<p># 删除工作区文件，并且将这次删除放入暂存区<br>$ git rm [file1] [file2] …</p>
+<p># 停止追踪指定文件，但该文件会保留在工作区<br>$ git rm –cached [file]</p>
+<p># 改名文件，并且将这个改名放入暂存区<br>$ git mv [file-original] [file-renamed]</p>
+</blockquote>
+<h2 id="四、代码提交"><a href="#四、代码提交" class="headerlink" title="四、代码提交"></a>四、代码提交</h2><blockquote>
+<p># 提交暂存区到仓库区<br>$ git commit -m [message]</p>
+<p># 提交暂存区的指定文件到仓库区<br>$ git commit [file1] [file2] … -m [message]</p>
+<p># 提交工作区自上次commit之后的变化，直接到仓库区<br>$ git commit -a</p>
+<p># 提交时显示所有diff信息<br>$ git commit -v</p>
+<p># 使用一次新的commit，替代上一次提交<br># 如果代码没有任何新变化，则用来改写上一次commit的提交信息<br>$ git commit –amend -m [message]</p>
+<p># 重做上一次commit，并包括指定文件的新变化<br>$ git commit –amend [file1] [file2] …</p>
+</blockquote>
+<h2 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h2><blockquote>
+<p># 列出所有本地分支<br>$ git branch</p>
+<p># 列出所有远程分支<br>$ git branch -r</p>
+<p># 列出所有本地分支和远程分支<br>$ git branch -a</p>
+<p># 新建一个分支，但依然停留在当前分支<br>$ git branch [branch-name]</p>
+<p># 新建一个分支，并切换到该分支<br>$ git checkout -b [branch]</p>
+<p># 新建一个分支，指向指定commit<br>$ git branch [branch] [commit]</p>
+<p># 新建一个分支，与指定的远程分支建立追踪关系<br>$ git branch –track [branch] [remote-branch]</p>
+<p># 切换到指定分支，并更新工作区<br>$ git checkout [branch-name]</p>
+<p># 切换到上一个分支<br>$ git checkout -</p>
+<p># 建立追踪关系，在现有分支与指定的远程分支之间<br>$ git branch –set-upstream [branch] [remote-branch]</p>
+<p># 合并指定分支到当前分支<br>$ git merge [branch]</p>
+<p># 选择一个commit，合并进当前分支<br>$ git cherry-pick [commit]</p>
+<p># 删除分支<br>$ git branch -d [branch-name]</p>
+<p># 删除远程分支<br>$ git push origin –delete [branch-name]<br>$ git branch -dr [remote/branch]</p>
+</blockquote>
+<h2 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h2><blockquote>
+<p># 列出所有tag<br>$ git tag</p>
+<p># 新建一个tag在当前commit<br>$ git tag [tag]</p>
+<p># 新建一个tag在指定commit<br>$ git tag [tag] [commit]</p>
+<p># 删除本地tag<br>$ git tag -d [tag]</p>
+<p># 删除远程tag<br>$ git push origin :refs/tags/[tagName]</p>
+<p># 查看tag信息<br>$ git show [tag]</p>
+<p># 提交指定tag<br>$ git push [remote] [tag]</p>
+<p># 提交所有tag<br>$ git push [remote] –tags</p>
+<p># 新建一个分支，指向某个tag<br>$ git checkout -b [branch] [tag]</p>
+</blockquote>
+<h2 id="七、查看信息"><a href="#七、查看信息" class="headerlink" title="七、查看信息"></a>七、查看信息</h2><blockquote>
+<p># 显示有变更的文件<br>$ git status</p>
+<p># 显示当前分支的版本历史<br>$ git log</p>
+<p># 显示commit历史，以及每次commit发生变更的文件<br>$ git log –stat</p>
+<p># 搜索提交历史，根据关键词<br>$ git log -S [keyword]</p>
+<p># 显示某个commit之后的所有变动，每个commit占据一行<br>$ git log [tag] HEAD –pretty=format:%s</p>
+<p># 显示某个commit之后的所有变动，其”提交说明”必须符合搜索条件<br>$ git log [tag] HEAD –grep feature</p>
+<p># 显示某个文件的版本历史，包括文件改名<br>$ git log –follow [file]<br>$ git whatchanged [file]</p>
+<p># 显示指定文件相关的每一次diff<br>$ git log -p [file]</p>
+<p># 显示过去5次提交<br>$ git log -5 –pretty –oneline</p>
+<p># 显示所有提交过的用户，按提交次数排序<br>$ git shortlog -sn</p>
+<p># 显示指定文件是什么人在什么时间修改过<br>$ git blame [file]</p>
+<p># 显示暂存区和工作区的差异<br>$ git diff</p>
+<p># 显示暂存区和上一个commit的差异<br>$ git diff –cached [file]</p>
+<p># 显示工作区与当前分支最新commit之间的差异<br>$ git diff HEAD</p>
+<p># 显示两次提交之间的差异<br>$ git diff [first-branch]…[second-branch]</p>
+<p># 显示今天你写了多少行代码<br>$ git diff –shortstat “@{0 day ago}”</p>
+<p># 显示某次提交的元数据和内容变化<br>$ git show [commit]</p>
+<p># 显示某次提交发生变化的文件<br>$ git show –name-only [commit]</p>
+<p># 显示某次提交时，某个文件的内容<br>$ git show [commit]:[filename]</p>
+<p># 显示当前分支的最近几次提交<br>$ git reflog</p>
+</blockquote>
+<h2 id="八、远程同步"><a href="#八、远程同步" class="headerlink" title="八、远程同步"></a>八、远程同步</h2><blockquote>
+<p># 下载远程仓库的所有变动<br>$ git fetch [remote]</p>
+<p># 显示所有远程仓库<br>$ git remote -v</p>
+<p># 显示某个远程仓库的信息<br>$ git remote show [remote]</p>
+<p># 增加一个新的远程仓库，并命名<br>$ git remote add [shortname] [url]</p>
+<p># 取回远程仓库的变化，并与本地分支合并<br>$ git pull [remote] [branch]</p>
+<p># 上传本地指定分支到远程仓库<br>$ git push [remote] [branch]</p>
+<p># 强行推送当前分支到远程仓库，即使有冲突<br>$ git push [remote] –force</p>
+<p># 推送所有分支到远程仓库<br>$ git push [remote] –all</p>
+</blockquote>
+<h2 id="九、撤销"><a href="#九、撤销" class="headerlink" title="九、撤销"></a>九、撤销</h2><blockquote>
+<p># 恢复暂存区的指定文件到工作区<br>$ git checkout [file]</p>
+<p># 恢复某个commit的指定文件到暂存区和工作区<br>$ git checkout [commit] [file]</p>
+<p># 恢复暂存区的所有文件到工作区<br>$ git checkout .</p>
+<p># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变<br>$ git reset [file]</p>
+<p># 重置暂存区与工作区，与上一次commit保持一致<br>$ git reset –hard</p>
+<p># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变<br>$ git reset [commit]</p>
+<p># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致<br>$ git reset –hard [commit]</p>
+<p># 重置当前HEAD为指定commit，但保持暂存区和工作区不变<br>$ git reset –keep [commit]</p>
+<p># 新建一个commit，用来撤销指定commit<br># 后者的所有变化都将被前者抵消，并且应用到当前分支<br>$ git revert [commit]</p>
+<p># 暂时将未提交的变化移除，稍后再移入<br>$ git stash<br>$ git stash pop</p>
+</blockquote>
+<h2 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h2><blockquote>
+<p># 生成一个可供发布的压缩包<br>$ git archive</p>
+</blockquote>
+<p>（完）</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2016/04/16/select-case-when-if-e7-9a-84-e4-b8-80-e4-ba-9b-e7-94-a8-e6-b3-95/" style="float: left;">
+        ← select case when if 的一些用法
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/03/24/php-e5-ae-9e-e7-8e-b0-e5-90-84-e7-a7-8d-e6-8e-92-e5-ba-8f-e7-ae-97-e6-b3-95/">
+        PHP实现各种排序算法 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>PHP实现各种排序算法 | 这是一片正在生长的麦田|乂小七</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="这是一片正在生长的麦田|乂小七">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="这是一片麦田" />
+    <meta name="keywords" content="乂小七, 这是一片麦田 , PHP,Python" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="这是一片正在生长的麦田|乂小七" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close">
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/哲学/" class="animsition-link">哲学<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/学习方法/" class="animsition-link">学习方法<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/摄影笔记/" class="animsition-link">摄影笔记<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/文学/" class="animsition-link">文学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/时间管理/" class="animsition-link">时间管理<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/未分类/" class="animsition-link">未分类<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">这是一片正在生长的麦田|乂小七</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+</div>
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-03-23T23:26:46.000Z" itemprop="datePublished">
+          2016-03-24
+      </time>
+    
+</span>
+                <h1>PHP实现各种排序算法</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>冒泡排序：时间复杂度<a href="https://zh.wikipedia.org/wiki/%E5%A4%A7O%E7%AC%A6%E5%8F%B7" target="_blank" rel="noopener">O</a>(<img src="https://upload.wikimedia.org/math/b/0/8/b08b1c6ec09f20907eb1d6f1392c01c6.png" alt="n^2">)</p>
+<ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 </li>
+</ol>
+<p>//冒泡排序数组<br>$a = array(5,8,4,7,12,6,3,9);<br>for($i = 0;$i&lt;count($a)-1;$i++){<br>    for($j=0;$j&lt;count($a)-1;$j++){<br>        if($a[$j]&lt;$a[$j+1]){<br>            swap($a[$j],$a[$j+1]);<br>            print_r($a);<br>        }<br>    }<br>}</p>
+<p>function swap(&amp;$x, &amp;$y) {<br>    $t = $x;<br>    $x = $y;<br>    $y = $t;<br>}</p>
+<p>鸡尾酒排序”:等于是<a href="https://zh.wikipedia.org/wiki/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">冒泡排序</a>的轻微变形。不同的地方在于从低到高然后从高到低，而<a href="https://zh.wikipedia.org/wiki/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">冒泡排序</a>则仅从低到高去比较序列里的每个元素。他可以得到比<a href="https://zh.wikipedia.org/wiki/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">冒泡排序</a>稍微好一点的效能，原因是<a href="https://zh.wikipedia.org/wiki/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">冒泡排序</a>只从一个方向进行比对（由低到高），每次循环只移动一个项目。鸡尾酒排序最糟或是平均所花费的次数都是<img src="https://upload.wikimedia.org/math/1/8/9/189317b4b935a745fcfaf95940d2b4f0.png" alt="O(n^2)">，但如果序列在一开始已经大部分排序过的话，会接近<img src="https://upload.wikimedia.org/math/7/b/a/7ba55e7c64a9405a0b39a1107e90ca94.png" alt="O(n)">。</p>
+<p>//鸡尾酒排序数组<br>$a = array(5,8,4,7,12,6,3,9);<br>$left = 0;<br>$right = count($a)-1;<br>while($left &lt; $right){<br>    for($i=$left;$i&lt;$right;$i++ ){<br>        if($a[$i]&lt;$a[$i+1]){<br>            swap($a[$i],$a[$i+1]);<br>        }<br>    }<br>    $right–;<br>    for($j=$right;$j&gt;$left;$j–){<br>        if($a[$j-1]&lt;$a[$j]){<br>            swap($a[$j-1],$a[$j]);<br>        }<br>    }<br>    $left++;<br>    print_r($a);<br>}</p>
+<p>function swap(&amp;$x, &amp;$y) {<br>    $t = $x;<br>    $x = $y;<br>    $y = $t;<br>}</p>
+<p><strong>**奇偶排序：</strong>通过比较数组中相邻的（奇-偶）位置数字对，如果该奇偶对是错误的顺序（第一个大于第二个），则交换。下一步重复该操作，但针对所有的（偶-奇）位置数字对。如此交替进行下去。<img src="https://upload.wikimedia.org/math/9/0/4/9049033798429002ac7616421dbae646.png" alt="\Theta(n^2)">**</p>
+<p>//奇偶排序数组<br>$a = array(5,8,4,7,12,6,3,9);<br>$ji = 0;<br>while(!$ji){<br>    $ji = 1;<br>    for($odd = 0;$odd&lt;2;$odd++){<br>        for($i= $odd ;$i&lt;count($a)-1;$i+=2){<br>            if($a[$i]&lt;$a[$i+1]){<br>                swap($a[$i],$a[$i+1]);<br>                $ji =0;<br>            }<br>        }<br>    }<br>    print_r($a);<br>}</p>
+<p>function swap(&amp;$x, &amp;$y) {<br>    $t = $x;<br>    $x = $y;<br>    $y = $t;<br>}</p>
+<p><strong>快速排序</strong>是由<a href="https://zh.wikipedia.org/wiki/%E6%9D%B1%E5%B0%BC%C2%B7%E9%9C%8D%E7%88%BE" target="_blank" rel="noopener">东尼·霍尔</a>所发展的一种<a href="https://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">排序算法</a>。在平均状况下，排序_n_个项目要<a href="https://zh.wikipedia.org/wiki/%E5%A4%A7O%E7%AC%A6%E5%8F%B7" target="_blank" rel="noopener"><strong>Ο</strong></a>(_n_ log _n_)次比较。在最坏状况下则需要<strong>Ο</strong>(_n_2)次比较，但这种状况并不常见。事实上，快速排序通常明显比其他<strong>Ο</strong>(_n_ log _n_)算法更快</p>
+<ol>
+<li>从数列中挑出一个元素，称为”基准”（pivot），</li>
+<li>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为<strong>分区（partition）</strong>操作。</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%80%92%E5%BD%92" target="_blank" rel="noopener">递归</a>地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。</li>
+</ol>
+<p>function quick_sort($arr) {<br>    $len = count($arr);</p>
+<pre><code>if ($len &lt;= 1)
+    return $arr;
+
+$left = $right = array();
+$mid_value = $arr\[0\];
+
+for ($i = 1; $i &lt; $len; $i++)
+    if ($arr\[$i\] &lt; $mid_value)
+        $left\[\] = $arr\[$i\];
+    else
+        $right\[\] = $arr\[$i\];
+
+return array\_merge(quick\_sort($left), (array)$mid\_value, quick\_sort($right));
+</code></pre><p>}</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2016/04/09/e5-b8-b8-e7-94-a8-git-e5-91-bd-e4-bb-a4-e6-b8-85-e5-8d-95/" style="float: left;">
+        ← 常用 Git 命令清单
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/03/23/mongodb-e6-95-b0-e6-8d-ae-e5-ba-93-e6-9c-aa-e6-8e-88-e6-9d-83-e8-ae-bf-e9-97-ae-e6-bc-8f-e6-b4-9e/">
+        MongoDB数据库未授权访问漏洞 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

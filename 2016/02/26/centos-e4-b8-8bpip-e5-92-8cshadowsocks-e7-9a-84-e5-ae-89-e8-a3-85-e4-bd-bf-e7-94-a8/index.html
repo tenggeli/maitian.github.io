@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>CentOS下pip和shadowsocks的安装使用 | 这是一片正在生长的麦田|乂小七</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="这是一片正在生长的麦田|乂小七">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="这是一片麦田" />
+    <meta name="keywords" content="乂小七, 这是一片麦田 , PHP,Python" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="这是一片正在生长的麦田|乂小七" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close">
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/哲学/" class="animsition-link">哲学<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/学习方法/" class="animsition-link">学习方法<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/摄影笔记/" class="animsition-link">摄影笔记<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/文学/" class="animsition-link">文学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/时间管理/" class="animsition-link">时间管理<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/未分类/" class="animsition-link">未分类<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">这是一片正在生长的麦田|乂小七</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+</div>
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-02-26T09:47:41.000Z" itemprop="datePublished">
+          2016-02-26
+      </time>
+    
+</span>
+                <h1>CentOS下pip和shadowsocks的安装使用</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>Pip是安装Python包的工具，提供了安装、列举已安装包、升级以及卸载包的功能。Pip 是对easy_install的取代，提供了和easy_install相同的查找包的功能，因此可以使用easy_install安装的包也同样可以使用pip进行安装。<br>目前有很多Python程序都是可以直接通过Pip来一键安装了，比如众所周知的Django、Markdown、<strong>Shadowsocks</strong>等。</p>
+<p>简要介绍一下Pip的用法（以安装Shadowsocks举例）：<br><strong>1、安装package</strong><br>pip install shadowsocks<br><strong>2、列出已安装的packages</strong><br>pip freeze<br><strong>3、安装特定版本的package</strong><br>pip install shadowsocks=1.3.3′<br>pip install shadowsocks&gt;1.0,&lt;1.3.3′<br><strong>4、升级已安装的package到最新版本</strong><br>pip install -U shadowsocks<br><strong>5、卸载已安装的package</strong><br>pip uninstall shadowsocks<br><strong>6、查询已安装的package</strong><br>pip search “shadowsocks”</p>
+<p>安装Pip之前必须要先安装setuptools，安装setuptools之前，必须要安装了Python，这之间的安装过程存在依赖关系，缺一不可。因此，整个过程还是比较麻烦的。<br><strong>1、 检查Python版本</strong><br>python –version<br>CentOS6.5默认安装的Python版本是2.6.6，返回值为：Python 2.6.6<br><strong>2、 安装setuptools</strong><br>yum install -y python-setuptools<br>安装完毕后，easy_install命令就可以使用了。<br><strong>3、 安装pip</strong><br>easy_install pip<br>通过easy_install安装pip是最为简单的方法。pip默认安装到/usr/bin目录下。<br><strong>4、 安装shadowsocks</strong><br>pip install shadowsocks</p>
+<p><strong>Shadowsocks的配置和使用</strong><br>至于Shadowsocks可以拿来做什么，这里就毋须赘述了。直接开始吧。<br><strong>1、 创建Shadowsocks的配置文件：</strong><br>CentOS下通过vim创建该配置，运行命令：<br>vi /etc/shadowsocks.json<br>内容如下：</p>
+<p>{<br>    “server”:”your_server_ip”,<br>    “server_port”:8989,<br>    “local_address”: “127.0.0.1”,<br>    “local_port”:1080,<br>    “password”:”yourpassword”,<br>    “timeout”:600,<br>    “method”:”aes-256-cfb”,<br>    “fast_open”: false,<br>    “workers”: 1<br>}</p>
+<p>各字段的含义：<br>server：服务器 IP (IPv4/IPv6)，注意这也将是服务端监听的 IP 地址<br>server_port：监听的服务器端口<br>local_address：本地监听的 IP 地址<br>local_port：本地端端口<br>password：用来加密的密码<br>timeout：超时时间（秒）<br>method：加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, “rc4”, 等等。默认是一种不安全的加密，推荐用 “aes-256-cfb”<br>fast_open：true 或 false。如果你的服务器 Linux 内核在3.7+，可以开启 fast_open 以降低延迟。开启方法：</p>
+<p>echo 3 &gt; /proc/sys/net/ipv4/tcp_fastopen</p>
+<p>开启之后，将 fast_open 的配置设置为 true 即可。<br>works：works数量，默认为 1</p>
+<p><strong>2、 安装M2Crypto</strong><br>默认加密方法 table 速度很快，但很不安全。推荐使用 “aes-256-cfb” 或者 “bf-cfb”。请不要使用 “rc4″，它不安全。如果选择 “table” 之外的加密，需要安装 M2Crypto。<br>先安装依赖包：</p>
+<p>yum install -y openssl-devel gcc swig python-devel autoconf libtool</p>
+<p>安装setuptools：</p>
+<p>wget –no-check-certificate <a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py" target="_blank" rel="noopener">https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py</a><br>python ez_setup.py install</p>
+<p>再通过pip安装M2Crypto：<br>pip install M2Crypto</p>
+<p><strong>3、 安装 gevent</strong><br>安装 gevent可以提高 Shadowsocks 的性能。CentOS下安装gevent依赖libevent和greenlet。<br>安装libevent：<br>yum install -y libevent<br>安装greenlet：<br>pip install greenlet<br>安装gevent：<br>pip install gevent</p>
+<p><strong>4、 命令行参数（服务器端启动命令）</strong><br>ssserver -c /etc/shadowsocks.json<br>如果想在后台一直运行Shadowsocks，启动命令如下：</p>
+<p>nohup ssserver -c /etc/shadowsocks.json &gt; /dev/null 2&gt;&amp;1 &amp;</p>
+<p><strong>备注：</strong>关于nohup，是可以让程序在后台运行的命令。</p>
+<p>同时可以用命令行参数覆盖 /etc/shadowsocks.json 里的设置：<br>sslocal -s 服务器地址 -p 服务器端口 -l 本地端端口 -k 密码 -m 加密方法<br>ssserver -p 服务器端口 -k 密码 -m 加密方法</p>
+<p><strong>备注：</strong>sslocal是客户端程序；ssserver是服务端程序。</p>
+<p><strong>5、 防火墙设置（如有）</strong><br>编辑防火墙配置文件/etc/sysconfig/iptables，将服务器端口（server_port）放行。<br>新增一条防火墙规则：</p>
+<p>-A INPUT -m state –state NEW -m tcp -p tcp –dport 8989 -j ACCEPT</p>
+<p>重启防火墙iptables：<br>service iptables restart</p>
+<p>至此，服务器端的 Shadowsocks 安装和配置完毕。</p>
+<p><strong>6、客户端配置</strong><br>Windows客户端有图形界面也有命令行，我们这里以配置图形化界面的shadowsocks-csharp为例说明。<br>下载客户端shadowsocks-csharp（最新版1.1.2）：<br><a href="https://shadowsocks-csharp.googlecode.com/files/shadowsocks-csharp-1.1.2.zip" target="_blank" rel="noopener">https://shadowsocks-csharp.googlecode.com/files/shadowsocks-csharp-1.1.2.zip</a></p>
+<p>解压至任意目录下，双击shadowsocks-csharp.exe运行程序，各参数选项填入：<br><a href="https://teddysun.com/wp-content/uploads/2014/shadowsocks_csharp.png" target="_blank" rel="noopener"><img src="https://teddysun.com/wp-content/uploads/2014/shadowsocks_csharp.png" alt=""></a></p>
+<p>Server IP:   服务器 IP (IPv4/IPv6)，填入在服务器端设置的IP地址（server）<br>Server Port: 服务器端口，填入在服务器端设置的端口号（server_port）<br>Password:    用来加密的密码，填入在服务器端设置的加密密码（password）<br>Proxy Port:  本地端代理的端口，填入在服务器端设置的本地端端口（local_port）<br>Encryptor:   加密方法，填入在服务器端设置的加密方法（method）</p>
+<p><strong>注意：</strong>本地客户端填写的参数一定要与服务器端设置的一致才可以。</p>
+<p>另有一款客户端 <strong>shadowsocks-gui</strong> （推荐）可供选择，下载地址：<br><a href="https://sourceforge.net/projects/shadowsocksgui/files/dist/" target="_blank" rel="noopener">https://sourceforge.net/projects/shadowsocksgui/files/dist/</a></p>
+<p>下面就可以利用浏览器插件无障碍浏览国外网站了。插件的设置过程这里略过。<br>AutoProxy（用于Firefox）、Proxy SwitchySharp（用于Chrome）</p>
+<p><strong>参考链接：</strong><br><a href="http://shadowsocks.org/en/download/servers.html" target="_blank" rel="noopener">http://shadowsocks.org/en/download/servers.html</a>（翻）<br><a href="https://pypi.python.org/pypi/shadowsocks" target="_blank" rel="noopener">https://pypi.python.org/pypi/shadowsocks</a></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2016/02/26/centos-7-e4-b8-8b-e4-bd-bf-e7-94-a8-iptables/" style="float: left;">
+        ← CentOS 7 下使用 iptables
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/02/25/redis-e5-ad-a6-e4-b9-a0-e6-89-8b-e5-86-8c-e5-ae-9e-e4-be-8b-e4-bb-a3-e7-a0-81/">
+        Redis学习手册(实例代码) →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

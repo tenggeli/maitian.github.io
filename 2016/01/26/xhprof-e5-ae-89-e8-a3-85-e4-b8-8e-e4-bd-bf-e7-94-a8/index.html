@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>Xhprof安装与使用 | 这是一片正在生长的麦田|乂小七</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="这是一片正在生长的麦田|乂小七">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="这是一片麦田" />
+    <meta name="keywords" content="乂小七, 这是一片麦田 , PHP,Python" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="这是一片正在生长的麦田|乂小七" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close">
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/哲学/" class="animsition-link">哲学<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/学习方法/" class="animsition-link">学习方法<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/摄影笔记/" class="animsition-link">摄影笔记<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/文学/" class="animsition-link">文学<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/时间管理/" class="animsition-link">时间管理<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/未分类/" class="animsition-link">未分类<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">这是一片正在生长的麦田|乂小七</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+</div>
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-01-26T07:35:55.000Z" itemprop="datePublished">
+          2016-01-26
+      </time>
+    
+    
+    | 
+    <a href="/tags/php/">php</a>,
+    
+    <a href="/tags/性能监控/">性能监控</a>
+    
+    
+</span>
+                <h1>Xhprof安装与使用</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Xhprof是一个PHP扩展，安装方式与一般PHP扩展一致。</p>
+<p>1.从<a href="https://pecl.php.net/package/xhprof" target="_blank" rel="noopener">这里</a>下载最新的源码包。假设解压缩后的文件夹为xhprof</p>
+<p>2.编译安装</p>
+<p>cd xhprof/extension<br>/path/to/php/bin/phpize<br>./configure –with-php-config=/path/to/php/bin/php-config<br>make<br>make install</p>
+<p>3.配置php.ini，添加以下几行：</p>
+<p>[xhprof]<br>extension=xhprof.so<br>xhprof.output_dir=”/path/to/output/dir” </p>
+<p>4.执行/path/to/php/bin/php -i | grep “xhprof”，确认xhprof扩展能成功加载</p>
+<p>5.xhprof会将收集到的性能数据按文件（一次数据收集存放一个文件）存放在xhprof.output_dir指定的目录（注意添加写权限）下，并通过xhprof/xhprof_html目录下的PHP脚本程序提供网页形式的展示，所以还需配置web服务提供对该脚本程序的访问，以Nginx为例：</p>
+<p>server {<br>    listen 8080;<br>    server_name localhost;</p>
+<pre><code>root /path/to/xhprof/xhprof_html;
+location / {
+    index index.html index.php;
+    try\_files $uri /index.php?$query\_string;
+}
+location ~ \\.php$ {
+    fastcgi\_split\_path_info ^(.+.php)(/.+)$;
+    fastcgi_pass unix:/var/run/php5-fpm.sock;
+    fastcgi\_param SCRIPT\_FILENAME $document\_root$fastcgi\_script_name;
+    fastcgi_index index.php;
+    include fastcgi_params;
+}
+</code></pre><p>}</p>
+<p>6.重启PHP-FPM与Nginx</p>
+<p>7.xhprof_html提供的Web展示功能可以提供代码调用逻辑图，但依赖于工具dot（即该逻辑图是使用dot语言写的），所以需要额外安装依赖graphviz，例如在CentOS上：yum install graphviz</p>
+<p>8.要对目标PHP程序进行性能分析，需要在程序中注入xhprof提供的方法调用，来收集性能数据，然后通过命令行执行或HTTP请求来触发</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>以Yii应用为例，xhprof方法调用注入示例如下：</p>
+<p>&lt;?php<br>// 启动xhprof性能数据收集<br>xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);</p>
+<p>// 加载Yii应用代码，处理请求<br>defined(‘YII_DEBUG’) or define(‘YII_DEBUG’,true);<br>require_once(‘path/to/yii/framework/yii.php’);<br>$configFile=’path/to/config/file.php’;<br>Yii::createWebApplication($configFile)-&gt;run();</p>
+<p>// 结束收集<br>$xhprof_data = xhprof_disable();</p>
+<p>$XHPROF_ROOT = “/path/to/xhprof/“;<br>include_once $XHPROF_ROOT . “/xhprof_lib/utils/xhprof_lib.php”;<br>include_once $XHPROF_ROOT . “/xhprof_lib/utils/xhprof_runs.php”;</p>
+<p>$xhprof_runs = new XHProfRuns_Default();<br>// 将此次收集的性能数据存放到xhprof.output_dir目录<br>$run_id = $xhprof_runs-&gt;save_run($xhprof_data, “xhprof_yii”);</p>
+<p>其中函数xhprof_enable有两个可选参数$flags和$options。</p>
+<p>$flags有3个可选值：</p>
+<ol>
+<li>XHPROF_FLAGS_NO_BUILTINS：使得跳过所有内置（内部）函数</li>
+<li>XHPROF_FLAGS_CPU：使输出的性能数据中添加 CPU 数据</li>
+<li>XHPROF_FLAGS_MEMORY：使输出的性能数据中添加内存数据</li>
+</ol>
+<p>可以组合使用三个可选值：xhprof_enable(XHPROF_FLAGS_NO_BUILTINS | XHPROF_FLAGS_CPU | XHPROF_FLAGS_MEMORY);。</p>
+<p>$options是数组类型，可传入键为ignored_functions的值，表示忽略性能分析中的某些函数，如：</p>
+<p>xhprof_enable(0, array(<br>    ‘ignored_functions’ =&gt;  array(<br>                                ‘call_user_func’,<br>                                ‘call_user_func_array’<br>                            )<br>    )<br>);</p>
+<p>除了xhprof_enable和xhprof_disable，还有另一对函数xhprof_sample_enable和xhprof_sample_disable，相比前一对，后者是以采样模式启动xhprof性能分析，更适合生产环境。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>“原生” xhprof 有两个小问题：</p>
+<ol>
+<li>需要在应用程序中注入xhprof的函数调用，在某些情况下，这并不太合适</li>
+<li>每次收集到的性能数据是以单个文件的方式存储，xhprof_html提供的Web展示功能每次只能分析展示单个文件的内容，无法关联多次收集的性能数据进行分析</li>
+</ol>
+<p>所以开源社区有一些xhprof的衍生版本，相比”原生”xhprof，区别主要在数据存储与分析。</p>
+<h3 id="XHProf-UI"><a href="#XHProf-UI" class="headerlink" title="XHProf UI"></a>XHProf UI</h3><p>针对上述的两点问题，我选择 <a href="https://github.com/preinheimer/xhprof" target="_blank" rel="noopener">XHProf UI</a> 进行额外部署，步骤如下：</p>
+<p>1.从 GitHub 上克隆代码库：git clone <a href="https://github.com/preinheimer/xhprof.git" target="_blank" rel="noopener">https://github.com/preinheimer/xhprof.git</a> xhprof-ui（注：这里指定了克隆的目标目录为xhprof-ui，以区分原来部署的原生xhprof）</p>
+<p>2.依照原生XHprof安装步骤的2-7操作</p>
+<p>3.因为XHProf UI默认使用MySQL来存储性能数据，所以需要进行数据库配置。将文件/path/to/xhprof-ui/xhprof_lib/目录下的config.sample.php重命名为config.php，然后修改如下配置项：</p>
+<p>// Change these:<br>$_xhprof[‘dbtype’] = ‘mysql’; // Only relevant for PDO<br>$_xhprof[‘dbhost’] = ‘localhost’;<br>$_xhprof[‘dbuser’] = ‘root’;<br>$_xhprof[‘dbpass’] = ‘password’;<br>$_xhprof[‘dbname’] = ‘xhprof’;<br>$_xhprof[‘dbadapter’] = ‘Pdo’;<br>// 注意：这里有个坑，$_xhprof[‘servername’]的值不能超过三个字符，这个配置项即对应数据表details的server_id字段<br>$_xhprof[‘servername’] = ‘myserver’;<br>$_xhprof[‘namespace’] = ‘myapp’;<br>$_xhprof[‘url’] = ‘<a href="http://url/to/xhprof/xhprof\_html&#39;" target="_blank" rel="noopener">http://url/to/xhprof/xhprof\_html&#39;</a>;</p>
+<p>//These are good for linux and its derivatives.<br>/<em><br>$_xhprof[‘dot_binary’]  = ‘/usr/bin/dot’;<br>$_xhprof[‘dot_tempdir’] = ‘/tmp’;<br>$_xhprof[‘dot_errfile’] = ‘/tmp/xh_dot.err’;
+</em>/</p>
+<p>// $controlIPs = false; //Disables access controlls completely.<br>$controlIPs = array();<br>$controlIPs[] = “127.0.0.1”;   // localhost, you’ll want to add your own ip here<br>$controlIPs[] = “::1”;         // localhost IP v6</p>
+<p>并创建相应的数据库xhprof和数据表details，其中创建数据表details的SQL语句见文件/path/to/xhprof-ui/xhprof_lib/utils/xhprof_runs.php，也可见 <a href="https://github.com/toomasr/xhprof/blob/master/xhprof_lib/utils/xhprof_runs.php#L109" target="_blank" rel="noopener">这里</a> ，<a href="https://github.com/preinheimer/xhprof" target="_blank" rel="noopener">XHProf UI</a> 代码的README.markdown有文档说明。</p>
+<hr>
+<p>前面说过“原生”xhprof的问题之一是：“需要在应用程序中注入xhprof的函数调用，在某些情况下，这并不太合适”。那么XHProf UI是怎么解决这个问题的呢？</p>
+<p>配置文件php.ini中有对配置项：</p>
+<ul>
+<li>auto_prepend_file：指定的脚本文件会在目标脚本执行之前自动解析执行</li>
+<li>auto_append_file：指定的脚本文件会在目标脚本执行之后自动解析执行</li>
+</ul>
+<p>XHProf UI提供脚本/path/to/xhprof-ui/external/header.php用于配置auto_prepend_file，即在所有目标PHP程序运行之前自动注入xhprof性能数据收集能力。</p>
+<p>配置auto_prepend_file的方式有两种：一种是直接修改php.ini的auto_prepend_file配置项，另一种是通过Nginx/Apache等HTTP服务器传送配置指令给PHP-FPM进程，如在Nginx的目标server配置块中添加一行：fastcgi_param PHP_VALUE “auto_prepend_file=/path/to/xhprof-ui/external/header.php”;。</p>
+<p>默认XHProf UI不会对PHP Web应用收集性能分析数据，可以在请求Web应用的任意URL时，添加GET参数_profile=1来启用，/path/to/xhprof-ui/external/header.php脚本会检查_profile参数，并将参数值写到cookie中setcookie(‘_profile’, $_GET[‘_profile’]);（这样就不用每次请求都带GET参数_profile=1，并且cookie是针对域名的，这样也就同域名下的其他URL请求启用了性能分析），然后对目标URL去掉参数_profile后发起重定向；对于不带GET参数_profile的URL请求，header.php会继续检查是否存在名为_profile的cookie，如果存在且值为布尔真，则设置条件变量启用性能分析，否则不启用。若想要对已启用性能分析的域名禁用性能分析，则可以通过对URL请求添加GET参数_profile=0来禁用，因为header.php在检查cookie时发现_profile值为布尔假（0），所以不会启用性能分析。</p>
+<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><p>在查看 Xhprof 或 XHProf UI 展示的性能数据时，会遇到以下几个术语，其含义对应如下：</p>
+<ol>
+<li>Calls / Call Count：函数/方法被调用的次数</li>
+<li>Incl. Wall Time / Wall Time：执行该函数/方法实际耗费的时间</li>
+<li>Incl. MemUse / Memory Usage：该函数/方法当前占用的内存</li>
+<li>Incl. PeakMemUse / Peak Memory Usage：函数/方法占用内存的峰值（注：我也不知道这个峰值是怎么算的）</li>
+<li>Incl. CPU / CPU：执行该函数/方法，花费的CPU时间</li>
+<li>Excl. Wall Time / Exclusive Wall Time</li>
+<li>Excl. MemUse / Exclusive Memory Usage</li>
+<li>Excl. PeakMemUse / Exclusive Peak Memory Usage</li>
+<li>Exclusive CPU</li>
+</ol>
+<p>术语中的Incl表示Inclusive，Excl表示Exclusive。Inclusive表示测量到的数据是函数/方法本身及所有调用的子函数/方法总共耗费占用的资源，Exclusive则表示不包含调用的子函数/方法耗费占用的资源。另外，所有测量值都是每个函数/方法调用在次数上的叠加。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2016/01/26/svn-e9-92-a9-e5-ad-90-e5-ae-9e-e7-8e-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e8-87-b3-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8/" style="float: left;">
+        ← svn钩子实现自动更新至测试服务器
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/01/25/php-e5-b8-b8-e7-94-a8-e5-87-bd-e6-95-b0/">
+        php常用函数 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>
