@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>如何在Linux下安装和卸载软件 | 这是一片正在生长的麦田|乂小七</title>
+  <title>如何制定计划 | 这是一片正在生长的麦田|乂小七</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -93,9 +93,9 @@
 				  	
 				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
 				    
-				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
 				    
@@ -103,9 +103,9 @@
 				    
 				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
 				    
@@ -123,17 +123,17 @@
 				    
 				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
-				    
 				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
 				    
 				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
@@ -226,72 +226,29 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-03-02T06:43:59.000Z" itemprop="datePublished">
-          2016-03-02
+      <time datetime="2015-09-24T08:27:14.000Z" itemprop="datePublished">
+          2015-09-24
       </time>
     
 </span>
-                <h1>如何在Linux下安装和卸载软件</h1>
+                <h1>如何制定计划</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>Linux软件安装常用方法 第一篇  </p>
-<p>1、软件安装卸载，分几种情况：  </p>
-<p>A：RPM包，这种软件包就像windows的EXE安装文件一样，各种文件已经编译好，并打了包，哪个文件该放到哪个文件夹，都指定好了，安装非常方便，在图形界面里你只需要双击就能自动安装。<br>==如何卸载:<br>1、打开一个SHELL终端<br>2、因为LINUX下的软件名都包括版本号，所以卸载前最好先确定这个软件的完整名称。<br>查找RPM包软件：rpm -qa ×××<em><br>注意：×××指软件名称开头的几个字母，不要求写全，但别错，</em>就是通配符号“<em>”，即星号，如你想查找机子里安装的REALPLAYER软件，可以输入：rpm -qa realplay</em><br>3、找到软件后，显示出来的是软件完整名称，如firefox-1.0.1-1.3.2<br>执行卸载命令：rpm -e firefox-1.0.1-1.3.2<br>===安装目录，执行命令查找：rpm -ql firefox-1.0.1-1.3.2<br>===参考文章：<a href="http://blog.chinaunix.net/article.p...178&amp;blogId=1438" target="_blank" rel="noopener">http://blog.chinaunix.net/article.p…178&amp;blogId=1438</a>  </p>
-<p>B：tar.gz（bz或bz2等）结尾的源代码包，这种软件包里面都是源程序，没有编译过，需要编译后才能安装，安装方法为:<br>1、打开一个SHELL，即终端<br>2、用CD 命令进入源代码压缩包所在的目录<br>3、根据压缩包类型解压缩文件(*代表压缩包名称)<br>tar -zxvf <strong><strong>.tar.gz<br>tar -jxvf </strong></strong>.tar.bz(或bz2)<br>4、用CD命令进入解压缩后的目录<br>5、输入编译文件命令：./configure（有的压缩包已经编译过，这一步可以省去）<br>6、然后是命令：make<br>7、再是安装文件命令：make install<br>8、安装完毕<br>===如何卸载：<br>1、打开一个SHELL，即终端<br>2、用CD 命令进入编译后的软件目录，即安装时的目录<br>3、执行反安装命令：make uninstall<br>====安装目录：注意make install命令过程中的安装目录，或者阅读安装目录里面的readme文件，当然最好的办法是在安装的过程中指定安装目录，即在./configure命令后面加参数–prefix=/**，<br>如：./configure –prefix=/usr/local/aaaa，即把软件装在/usr/local/路径的aaaa这个目录里。一般的软件的默认安装目录在/usr/local或者/opt里，可以到那里去找找  </p>
-<p>C：以bin结尾的安装包，这种包类似于RPM包，安装也比较简单<br>1、打开一个SHELL，即终端<br>2、用CD 命令进入源代码压缩包所在的目录<br>3、给文件加上可执行属性：chmod +x <strong>**</strong>.bin（中间是字母x，小写）<br>3、执行命令：./<strong>**</strong>.bin(realplayer for linux就是这样的安装包)<br>===如何卸载：把安装时中选择的安装目录删除就OK<br>===执行安装过程中可以指定，类似于windows下安装。  </p>
-<p>2、安装完软件后如何执行。 安装完软件后可以有好多种方法执行软件：<br>A、有些软件安装后会自动在应用程序列表里加上快捷键，和windows一样，到那里找就行了。<br>B、如果在应用程序列表里找不到的话，可以直接在/开始/运行命令里输入命令：启动命令一般就是软件名，如firefox，realplay，xmms等<br>C、也可以打开一个shell终端，输入软件名，和在“运行命令”里一样。如果不知道命令全程的话，可以输入开头的字母，然后按tab键查找，系统会自动显示以输入字母开头的所有命令/<br>D、你也可以直接到安装目录下运行启动文件，linux下的可执行图标和shell终端图标很像<br>E、到/usr/bin目录里找安装的软件启动文件执行命令。linux系统把所有可执行的文件命令在/usr/bin目录里都作了启动连接，你可以去那个目录寻找你安装的文件的启动命令，双击启动  </p>
-<p>Linux下的软件包安装方法 第二篇  </p>
-<p>--------------------------------------------------------------------------------  </p>
-<p>1、已经编译打包好的xxx.rpm  </p>
-<p>如果你的Linux系统带有安装程序，最好用系统自带的安装程序来安装。比如SuSE的YaST2就带有安装程序，在KDE环境下只要是rpm，就可以在Konqueror里面点击再“Install with YaST2”，这样做的好处是YaST2会给你提示包的详细信息，自动检查信赖关系，而且以后可以方便地在YaST2里面卸载软件包。SuSE的Red-Carpet也提供了安装功能，也不错。  </p>
-<p>另一种方式是使用rpm命令，需要打开终端，切换到xxx.rpm所在目录，执行：<br>rpm -ivh xxx.rpm  </p>
-<p>如果需要还可以带上其他参数。不过在SuSE里面，用rpm命令安装的软件包，在YaST2的控制面板里面显示为“锁定状态”，我不知道这是什么意思，不过软件包是可用的，也可以在YaST2里面卸载。  </p>
-<p>2、打包好的源码包xxx.src.rpm  </p>
-<p>要用命令来重新生成一下：<br>rpm -rebuild xxx.src.rpm  </p>
-<p>3、安装程序xxx.bin  </p>
-<p>商业软件有不少以这种方式打包发行，其实就相当于Windows下的Setup.exe，不过你得先把xxx.bin改为可执行状态，可以用右键–&gt;属性来修改，也可以用如下命令：<br>chmod +x xxx.bin  </p>
-<p>这样，就可以通过双击或在终端下执行xxx.bin了。  </p>
-<p>4、压缩方式的软件包xxx.tar.gz、xxx.bz2、xxx.z等等  </p>
-<p>如何解压缩请看这篇文章：<br><a href="http://www.linuxsir.org/bbs/showthr...threadid=162970" target="_blank" rel="noopener">http://www.linuxsir.org/bbs/showthr…threadid=162970</a>  </p>
-<p>这种软件包又分两种形式：  </p>
-<p>(1)已经编译好的软件包，使用安装脚本来安装：  </p>
-<p>你最好先看一下软件包的说明文件，如readme、install、xxx.htm等。  </p>
-<p>再找一下有没有xxx.sh、xxx.pl这种文件，一般是install.sh或install.pl，也可能不是这种名字，具体情况具体分析。  </p>
-<p>打开终端，切换到软件包所在目录，运行如下命令：<br>./xxx.sh 或 ./xxx.pl 即可。  </p>
-<p>(2)需要自行编译的源码压缩包，先解压缩：  </p>
-<p>同样地，你最好先看一下软件包的说明文件，如readme、install、xxx.htm等。  </p>
-<p>一般安装形式为：  </p>
-<p>打开终端，切换到软件包所在目录，运行如下命令：  </p>
-<p>./configure （做一下自动配置，一般会花不少时间。配置程序会检查你的系统信息，作出相应配置，肯定会检查你的编译器(如gcc)和库文件(如glib)等信息，所以你必须保证你的系统上有这些软件）  </p>
-<p>make （开始编译，一般会花不少时间）  </p>
-<p>make check （检查一下结果是否正确。这步不是必须，但建议做一下）  </p>
-<p>make install （运行安装程序）  </p>
-<p>这样，就完成了软件安装过程。  </p>
-<p>如果你想删除源代码文件的话，可以在原目录运行命令：<br>make clear  </p>
-<p>如果你想卸载该软件包的话，可以在原目录下运行命令：<br>make uninstall  </p>
-<p>5、使用java编译的安装程序xxx.jar  </p>
-<p>首先，你的系统上必须有java虚拟机软件，如果没有，到Sun公司的网站上下载一个装上（<a href="http://www.java.com/" target="_blank" rel="noopener">http://www.java.com</a>或者<a href="http://java.sun.com/" target="_blank" rel="noopener">http://java.sun.com</a>）。  </p>
-<p>要安装xxx.jar形式的软件包，先打开终端，切换到xxx.jar所在目录，执行：<br>java -jar xxx.jar  </p>
-<p>这样就启动了安装程序。  </p>
-<p>make check （检查一下结果是否正确。这步不是必须，但建议做一下）<br>make clear  </p>
-<p>如果你想卸载该软件包的话，可以在原目录下运行命令：<br>make uninstall  </p>
-<p>6.使用portage，敲指令：  </p>
-<p># emerge packagename (从源码编译或安装某些已编好了的包)<br># emerge -k packagename (自己编译好摆在硬盘上的包)  </p>
-<p>没了，就这么简单。</p>
+      		<p>要想制订好学习计划，一般要考虑以下几方面： 一、计划要尽量全面 学习计划是指学习的具体安排。要想真正完成好学习计划，在考虑计划的时候，一定要对自己的学习生活做出全面的安排。应包括社会工作时间、为集体服务时间、锻炼时间、睡眠时间及娱乐活动时间等。这样，在学习时间内才可能精力充沛地学习。 二、安排好常规学习时间和自由学习时间 学习时间可以分为两部分：一是常规学习时间，主要用来完成当天老师布置的学习任务，消化当天所学的知识。二是自由学习时间，是指完成了老师布置的学习任务后所剩下的时间。这部分时间一般可以用来补课或提高深造。学习较差的同学，随着学习水平的提高，应经历常规学习时间逐渐减少，自由时间逐渐增加的过程。凡是体会到因为抓住了自由学习时间而给学习的全局带来好处的同学，就会努力去提高常规学习时间内的学习效率，以便增加自由学习时间，使学习的主动权越来越大。 三、长计划和短安排 长计划和短安排是指在一个比较长的时间内，应有个大致计划。由于实际的学习生活往往无法预测，所以，长计划不可能太具体，不可能把每天干什么都列出来。但是，在学习上计划要解决哪些问题，心中应当有数。应把一个在短期内无法完成的学习任务分到每周、每天去。这样，在每天学习时，就会明白今天的学习在学习全局中的地位。有了具体的短安排计划，长计划中的任务可以逐步得到实现；有了长计划，就可以在完成具体学习任务时具有明确的学习目的。 四、 从实际出发来制订计划 在订计划的时候，不要脱离了学习的实际情况。主要指以下几方面： 1． 自己知识和能力 2．每个阶段的学习时间 3．学习上的缺欠和漏洞 4．老师教学的实际进度 从实际出发还要注意的一点是不要平均使用力量，要抓住重点。 五、 计划要留有余地 计划终归不是现实，而只是一种可能性。要想把计划完成现实，还要经过一段很长的努力过程，在这个过程中自己的思想会发生变化，学习的各种条件也会发生变化，计划订得再实际，也不免出现估计不到的情况。所以，为了保证计划的实现，订计划时就不要太满、太死、太紧，要留出机动时间。 六、 提高时间的利用率 早晨和晚上，或者说一天学习的开头和结尾部分的时间，可以安排着重看记忆的科目，如外语等；当心情比较愉快，注意力比较集中，时间又比较长，这时候可安排比较枯燥，或自己又不太喜欢的科目；零星的时间，注意力不容易集中的时间，可以安排做习题或去学习自己最感兴趣的学科。除此以外，还要注意学习时间和体育活动要交替安排，文科和理科要交替安排，相近的学习内容不要集中在一起学习，等等。这样安排，在同样多的时间内，由于安排了合适的内容，就会收到较好的效果。 七、 注重效果，不断调整 在计划执行到一个阶段之后，就应当检查一下效果如何，如效果不好，应找到原因，及时调整。 主要检查以下这些内容： 计划提出的学习任务是否已经完成？自己是否基本按计划实施？学习效果如何？没有完成计划的原因？ 通过检查，立即采取相应的措施，及时改变计划中的不合理部分。 科学的、实际的个人学习计划，只要认真去执行，必将促进你的学习，培养你的意志，增强你的信心。请你试一试吧！</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2016/03/18/yii-e6-a1-86-e6-9e-b6-e9-87-8d-e7-94-a8-e7-9a-84-e5-b0-8f-e9-83-a8-e4-bb-b6/" style="float: left;">
-        ← YII框架重用的小部件
+    <a class="pull-left" href="/2015/09/24/e6-88-91-e7-9c-8b-e8-bf-87-ef-bc-8c-e8-bf-98-e4-b8-8d-e9-94-99-e7-9a-84-e7-94-b5-e5-bd-b1/" style="float: left;">
+        ← 我看过，还不错的电影
     </a>
     
     
-    <a class="pull-right" href="/2016/03/02/e8-a7-a3-e5-86-b3redisexception-with-message-read-error-on-connection/">
-        解决'RedisException' with message 'read error on connection' →
+    <a class="pull-right" href="/2015/09/24/e5-a6-82-e4-bd-95-e5-ad-a6-e4-bc-9a600-e5-a4-9a-e7-a7-8d-e7-bc-96-e7-a8-8b-e8-af-ad-e8-a8-80/">
+        如何学会600多种编程语言 →
     </a>
     
 </nav>

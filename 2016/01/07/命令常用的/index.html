@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>四步教你破解隔壁老王的Wi-Fi密码，蹭网没商量！ | 这是一片正在生长的麦田|乂小七</title>
+  <title>命令常用的 | 这是一片正在生长的麦田|乂小七</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -93,9 +93,9 @@
 				  	
 				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
 				    
-				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
 				    
@@ -103,9 +103,9 @@
 				    
 				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
 				    
@@ -123,17 +123,17 @@
 				    
 				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
-				    
 				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
 				    
 				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
@@ -226,44 +226,32 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2015-10-22T01:36:31.000Z" itemprop="datePublished">
-          2015-10-22
+      <time datetime="2016-01-07T07:48:50.000Z" itemprop="datePublished">
+          2016-01-07
       </time>
     
-    
-    | 
-    <a href="/tags/linux/">linux</a>,
-    
-    <a href="/tags/破解/">破解</a>
-    
-    
 </span>
-                <h1>四步教你破解隔壁老王的Wi-Fi密码，蹭网没商量！</h1>
+                <h1>命令常用的</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>文章来自【程序师】 <a href="http://www.techug.com/wi-fi-password" target="_blank" rel="noopener">原文链接</a></p>
-<p><img src="http://static.webhek.com/techug-res/uploads/2015/10/y.png-1000x692.jpg" alt="y.png"></p>
-<p>最棒的邻居莫过于不设Wi-Fi密码的好人，然而现在邻里关系如此淡漠，要蹭个Wi-Fi总被密码挡在门口。没有中国好邻居提供Wi-Fi密码，我们就自己主动蹭呀！今天硬创邦小编要为大家倾情奉献一个捕获Wi-Fi密码的方法。 目前常见的Wi-Fi加密方式有WEP、WPA2和WPS（链接为各自的破解方式），不过有网友反映以往破解WPA2的方法耗时太长，而且不适用于所有WPS启动的接入点。而今天介绍的这种方法则更加省时省力。 <strong>主要原理</strong></p>
-<ul>
-<li><strong>创建一个伪AP来“狸猫换太子”，然后撤销用户AP的授权，</strong></li>
-<li><strong>通知用户需要进行“固件升级”，需要重新验证密码。你的假AP由于具有相同的SSID，用户便会“交代”密码。</strong></li>
-<li><strong>这样你就能得到用户的密码，并且让用户采用你的伪AP做为自己的接入点。而对方一无所知。</strong></li>
-</ul>
-<p>之前也有类似的脚本，例如Airsnarf；不过我们这次采用的是Wifiphisher，这个优化过的自动化脚本比起前者更加方便。 要完成上述“大业”，你需要Kali Linux和两个无线适配器，其中一个必须能支持数据包注入。   <strong>第一步：下载Wifiphisher</strong> 地址在Github上有（链接在此）。 如图所示，这是已经解开了的Wifiphisher源代码。 <img src="http://static.webhek.com/techug-res/uploads/2015/10/561f2126d4c7e.png" alt=""> 当然，如果你懒，也可以复制GitHub上的代码，不用谢~ <strong>第二步：导航到该目录</strong> 接下来，导航到Wifiphisher创建时被解压的目录。就图示而言，为/wifiphisherWi-Fi1.1。 当你看到目录内容时，你会看到wifiphisher.py的脚本。 <img src="http://static.webhek.com/techug-res/uploads/2015/10/561f214d99bb8.png" alt=""> <strong>第三步：运行脚本</strong> 可以键入下面的脚本实现。 _ kali &gt; python wifiphisher.py_ 注意这里有一个问题： <img src="http://static.webhek.com/techug-res/uploads/2015/10/561f216a92a26.png" alt=""> 如果是第一次运行脚本的话，它可能会出现提示安装hostpad的信息，键入Y继续安装即可。 <img src="http://static.webhek.com/techug-res/uploads/2015/10/561f219369589.png" alt=""> 完成的时候，再次运行Wifiphisher脚本。 这次将运行8080和43端口的Web服务器，然后开始搜索附近的Wi-Fi网络。 <img src="http://static.webhek.com/techug-res/uploads/2015/10/561f21afa83ef.png" alt=""> 等待搜索完成，我们会发现一系列Wi-Fi网络名。最下方的wonderhowto就是我们的目标。 <img src="http://static.webhek.com/techug-res/uploads/2015/10/561f21be2b53b.png" alt=""> <strong>第四步：获取密码</strong> 按下Ctrl + C，键入想要复制的AP数，在这里我们选择12。 <img src="http://static.webhek.com/techug-res/uploads/2015/10/561f21e722e6a.png" alt=""> 敲下回车，Wifiphisher会显示如下结果，显示了正在使用的界面，还有正被攻击及复制的AP所在的SSID。 <img src="http://static.webhek.com/techug-res/uploads/2015/10/561f21eeb006a.png" alt=""> 目标用户已经取消验证他们的AP，随后会出现一个固件升级的信息，请求他们重新验证。一旦重新验证，他们接入的就是伪接入点了。 <img src="http://static.webhek.com/techug-res/uploads/2015/10/561f2207e167d.png" alt=""> 当用户输入密码，它会通过Wifiphisher的开放终端传输给你，随后他们依然像平时一样上网，风平浪静，然而他们并不知道我们已经获得了密码。 <img src="http://static.webhek.com/techug-res/uploads/2015/10/561f220a2c62f.png" alt=""> 现在你可以开始愉快地蹭Wi-Fi了！</p>
+      		<p>nbtstat -A  192.168.188.18 windows下通过ip查看计算机工作组和名称</p>
+<p>svnserve -d -r /home/svnroot 重启svn</p>
+<p>export LANG=en_US.UTF-8<br>SVN=/usr/bin/svn  #必须写绝对路径<br>STATIC_DIR=/home/wwwroot/default/web  #注意权限问题<br>$SVN update  $STATIC_DIR –username lvluole –password 123456 –no-auth-cache</p>
+<p>python sqlmap.py -u “<a href="http://www.haoshouwang.com/you/goods/id/276&quot;" target="_blank" rel="noopener">http://www.haoshouwang.com/you/goods/id/276&quot;</a> -v 3 –dbms “MySQL” –technique U -p id –batch –tamper “between.py”</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2015/11/03/sql-e6-b3-a8-e5-85-a5-e9-80-9f-e6-9f-a5-e8-a1-a8-ef-bc-88-e4-b8-8a-ef-bc-89/" style="float: left;">
-        ← SQL注入速查表（上）
+    <a class="pull-left" href="/2016/01/09/sqlmap-e5-9f-ba-e6-9c-ac-e5-91-bd-e4-bb-a4/" style="float: left;">
+        ← sqlmap基本命令
     </a>
     
     
-    <a class="pull-right" href="/2015/10/19/CentOS 6 VPS创建pptpd VPN服务/">
-        CentOS 6 VPS创建pptpd VPN服务 →
+    <a class="pull-right" href="/2016/01/06/e5-bf-83-e7-bb-8f/">
+        心经 →
     </a>
     
 </nav>
