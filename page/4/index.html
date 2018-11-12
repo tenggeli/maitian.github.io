@@ -93,19 +93,21 @@
 				  	
 				    <li><a href="/categories/Linux/" class="animsition-link">Linux<small>(30)</small></a></li>
 				    
-				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
 				    
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    
 				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Nginx/" class="animsition-link">Nginx<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
 				    
@@ -123,15 +125,15 @@
 				    
 				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
-				    
 				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
-				    
 				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
@@ -254,6 +256,43 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2016/02/24/redis-e5-ad-a6-e4-b9-a0-e6-89-8b-e5-86-8chashes-e6-95-b0-e6-8d-ae-e7-b1-bb-e5-9e-8b/">Redis学习手册(Hashes数据类型)</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2016-02-24T05:57:19.000Z" itemprop="datePublished">
+          2016-02-24
+      </time>
+    
+    
+    | 
+    <a href="/tags/Redis/">Redis</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                         我们可以将Redis中的Hashes类型看成具有String Key和String Value的map容器。所以该类型非常适合于存储值对象的信息。如Username、Password和Age等。如果Hash中包含很少的字段，那么该类型的数据也将仅占用很少的磁盘空间。每一个Hash可以存储4294967295个键值对。
+1. HSET/HGET/HDEL/HEXISTS/HLEN/HSETNX:
+_    #在Shell命令行启动Red
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2016/02/24/redis-e5-ad-a6-e4-b9-a0-e6-89-8b-e5-86-8chashes-e6-95-b0-e6-8d-ae-e7-b1-bb-e5-9e-8b/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -572,36 +611,6 @@ sqlmap支持五种不同的注入模式：
                     
                     <p class="pull-right readMore">
                         <a href="/2016/01/09/sqlmap-e7-94-a8-e6-88-b7-e6-89-8b-e5-86-8c-2/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/01/09/sqlmap-e5-9f-ba-e6-9c-ac-e5-91-bd-e4-bb-a4/">sqlmap基本命令</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-01-09T07:37:21.000Z" itemprop="datePublished">
-          2016-01-09
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        ./sqlmap.py –h     //查看帮助信息./sqlmap.py –u “http://www.anti-x.net/inject.asp?id=injecthere”  //get注入./sqlmap.py –u “http://www.anti-x.net/inject.asp?id=injecthere” –data “DATA”//post注入./sqlmap.py –u “http://www.anti-x.net
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/01/09/sqlmap-e5-9f-ba-e6-9c-ac-e5-91-bd-e4-bb-a4/">Read More...</a>
                     </p>
                     
                 </div>
