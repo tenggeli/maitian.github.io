@@ -99,15 +99,15 @@
 				    
 				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/Nginx/" class="animsition-link">Nginx<small>(1)</small></a></li>
+				    <li><a href="/categories/Nginx/" class="animsition-link">Nginx<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
 				    
@@ -131,13 +131,13 @@
 				    
 				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
 				    
-				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -245,9 +245,10 @@
       		<h2 id="关于Nginx"><a href="#关于Nginx" class="headerlink" title="关于Nginx"></a>关于Nginx</h2><p>Nginx是一款面向性能设计的HTTP服务器，能反向代理HTTP，HTTPS和邮件相关(SMTP，POP3，IMAP)的协议链接。并且提供了负载均衡以及HTTP缓存。<br>它的设计充分使用异步事件模型，削减上下文调度的开销，提高服务器并发能力。<br>采用了模块化设计，提供了丰富模块的第三方模块。<br>所以关于Nginx，有这些标签：「异步」「事件」「模块化」「高性能」「高并发」「反向代理」「负载均衡」</p>
 <h2 id="进程模型"><a href="#进程模型" class="headerlink" title="进程模型"></a>进程模型</h2><p>Nginx的进程是使用经典的「Master-Worker」模型。</p>
 <p>Nginx在启动后，会有一个master进程和多个worker进程。</p>
-<p>master进程主要用来管理worker进程，包含：接收来自外界的信号，向各worker进程发送信号，监控worker进程的运行状态，当worker进程退出后(异常情况下)，会自动重新启动新的worker进程。<br>worker进程主要处理基本的网络事件，多个worker进程之间是对等的，他们同等竞争来自客户端的请求，各进程互相之间是独立的。需要注意的是，每个Worker只有主线程，即所谓的「单线程」。<br>一个请求，只可能在一个worker进程中处理，一个worker进程，不可能处理其它进程的请求。<br>worker进程的个数是可以设置的，一般会设置与机器cpu核数一致，这里面的原因与nginx的进程模型以及事件处理模型是分不开的。nginx为了更好的利用多核特性，提供了cpu亲缘性的绑定选项，我们可以将某一个进程绑定在某一个核上，这样就不会因为进程的切换带来cache的失效。更多的worker数，只会导致进程来竞争cpu资源。</p>
+<p>master进程主要用来管理worker进程，包含：接收来自外界的信号，向各worker进程发送信号，监控worker进程的运行状态，当worker进程退出后(异常情况下)，会自动重新启动新的worker进程。<br>worker进程主要处理基本的网络事件，多个worker进程之间是对等的，他们同等竞争来自客户端的请求，各进程互相之间是独立的。需要注意的是，每个Worker只有主线程，即所谓的「单线程」。<br>一个请求，只可能在一个worker进程中处理，一个worker进程，不可能处理其它进程的请求。<br>Work进程是为了传入并处理来自客户端的链接，提供反向代理等功能。<br>Nginx内部维护了一个accept_mutex锁，保证一个时刻，一个请求只能被一个work进程捕获。当一个work进程接受链接后，开始读取请求，解析请求，处理请求，产生数据，返回给客户端，然后断开。<br>worker进程的个数是可以设置的，一般会设置与机器cpu核数一致，这里面的原因与nginx的进程模型以及事件处理模型是分不开的。nginx为了更好的利用多核特性，提供了cpu亲缘性的绑定选项，我们可以将某一个进程绑定在某一个核上，这样就不会因为进程的切换带来cache的失效。更多的worker数，只会导致进程来竞争cpu资源。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">Admin-- 信号--&gt; Master进程</span><br><span class="line">Master进程--信号--&gt; Work进程1</span><br><span class="line">Master进程--信号--&gt; Work进程2</span><br><span class="line">Master进程--信号--&gt; Work进程3</span><br><span class="line">	Client1--链接--&gt; Work进程1</span><br><span class="line">	Client2--链接--&gt; Work进程1</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">应用层-&gt;系统内核: 非阻赛调用</span><br><span class="line">Note left of 应用层: read</span><br><span class="line">系统内核--&gt;应用层: 立即返回</span><br><span class="line">应用层--&gt;系统内核: 调用</span><br><span class="line">Note left of 应用层: epoll</span><br><span class="line">系统内核--&gt;应用层: 消息</span><br><span class="line">Note right of 应用层: 休眠</span><br><span class="line">应用层-&gt;系统内核: 非阻赛调用</span><br><span class="line">Note left of 应用层: read</span><br><span class="line">系统内核--&gt;应用层: 返回数据</span><br></pre></td></tr></table></figure>
+<div id="sequence-0"></div>
+
 <h2 id="事件模型"><a href="#事件模型" class="headerlink" title="事件模型"></a>事件模型</h2><p>Nginx对于事件，以「异步非阻塞」方式来实现。<br>异步和非异步，阻塞和非阻塞是两组不同的概念，前者更多对于应用程序而言，而后者更多对于CPU来说：</p>
 <p>异步：执行一个动作之后，可以去操作别的操作，然后等待通知再回来执行刚才没执行完的操作。</p>
 <p>非异步(同步)：执行一个操作之后，等待结果，然后才继续执行下面的操作。</p>
@@ -266,12 +267,25 @@
 <h2 id="请求-Request"><a href="#请求-Request" class="headerlink" title="请求 Request"></a>请求 Request</h2><p>在nginx中我们指http请求，具体到nginx中的数据结构是ngx_http_request_t。<br>它是对一个http请求的封装，nginx通过ngx_http_request_t来保存解析请求与输出响应相关的数据。<br>一个http请求，包含请求行、请求头、请求体、响应行、响应头、响应体。</p>
 <p>一般性的网络请求处理过程是：<br>​    1.客户端会发送请求过来。<br>​    2.然后我们读取一行数据，分析出请求行中包含的method、uri、http_version信息。<br>​    3.然后再一行一行处理请求头，并根据请求method与请求头的信息来决定是否有请求体以及请求体的长度，然后再去读取请求体。<br>​    4.得到请求后，我们处理请求产生需要输出的数据，然后再生成响应行，响应头以及响应体。<br>​    5.在将响应发送给客户端之后，一个完整的请求就处理完了。</p>
 <p>而nginx处理请求的时候会有一些小小的区别，比如，当请求头读取完成后，就开始进行请求的处理了。</p>
-<h2 id="Nginx处理请求过程"><a href="#Nginx处理请求过程" class="headerlink" title="Nginx处理请求过程"></a>Nginx处理请求过程</h2><p>nginx处理一个请求的抽象概念过程：<br>​    1.request 请求进来<br>​    3.初始化HTTP Request， 生成 HTTP Request对象<br>​    3.处理请求头<br>​    4.处理请求体<br>​    5.调用与此请求关联的handler（根据你URL或者Location配置）<br>​    6.依次调用各phase handler进行处理<br>​        1.获取location配置<br>​        2.产生适当的响应<br>​        3.发送response header<br>​        4.发送response body</p>
+<h2 id="Nginx处理请求过程"><a href="#Nginx处理请求过程" class="headerlink" title="Nginx处理请求过程"></a>Nginx处理请求过程</h2><p>nginx处理一个请求的抽象概念过程：<br>​    1.request 请求进来<br>​    3.初始化HTTP Request， 生成 HTTP Request对象<br>​    3.处理请求头<br>​    4.处理请求体<br>​    5.调用与此请求关联的handler（根据你URL或者Location配置）<br>​    6.依次调用各phase handler进行处理<br>​        1.获取location配置<br>​        2.产生适当的响应<br>​        3.发送response header<br>​        4.发送response body<script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">应用层->系统内核: 非阻赛调用
+Note left of 应用层: read
+系统内核-->应用层: 立即返回
+应用层-->系统内核: 调用
+Note left of 应用层: epoll
+系统内核-->应用层: 消息
+Note right of 应用层: 休眠
+应用层->系统内核: 非阻赛调用
+Note left of 应用层: read
+系统内核-->应用层: 返回数据</textarea><textarea id="sequence-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12,"theme":"simple"}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2018/11/13/Nginx和php-fpm/" style="float: left;">
+        ← Nginx和php-fpm.md
+    </a>
     
     
     <a class="pull-right" href="/2018/05/23/理解HTTP之keep-alive/">

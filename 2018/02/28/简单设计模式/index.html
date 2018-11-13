@@ -99,15 +99,15 @@
 				    
 				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/Nginx/" class="animsition-link">Nginx<small>(1)</small></a></li>
+				    <li><a href="/categories/Nginx/" class="animsition-link">Nginx<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
 				    
@@ -131,13 +131,13 @@
 				    
 				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
 				    
-				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -237,14 +237,14 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>工厂模式 </p>
-<p>1。创建工厂类 </p>
+      		<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>1。创建工厂类 </p>
 <p>2。在类中创建相关操作的静态类，return出相应的new之后的对象。 </p>
 <p>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class factory &#123; </span><br><span class="line">	static function createDtabase($new)&#123; </span><br><span class="line">		return new $new; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>使用工厂模式对于共用的类可以不会因为修改而产生互相的影响。 </p>
-<p>单列模式 1。私有化构造方法。 </p>
+<h2 id="单列模式"><a href="#单列模式" class="headerlink" title="单列模式"></a>单列模式</h2><p>1。私有化构造方法。 </p>
 <p>2。创建一个静态方法，在静态方法new。</p>
 <p>3。创建一个静态变量存储new之后的实例。 例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class database &#123; </span><br><span class="line">	protected $DB; </span><br><span class="line">	private function __construct() &#123; &#125; </span><br><span class="line">	public static function getIntance()&#123; </span><br><span class="line">		if(self::$DB)&#123; </span><br><span class="line">			return self $DB </span><br><span class="line">		&#125; </span><br><span class="line">		self::$DB = new self(); </span><br><span class="line">		return self::$DB; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><p>1。创建接口<br>2。创建实现接口的实体类</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">

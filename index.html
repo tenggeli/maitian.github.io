@@ -99,15 +99,15 @@
 				    
 				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/Nginx/" class="animsition-link">Nginx<small>(1)</small></a></li>
+				    <li><a href="/categories/Nginx/" class="animsition-link">Nginx<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
 				    
@@ -131,13 +131,13 @@
 				    
 				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
 				    
-				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -256,6 +256,145 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/11/13/30条MySQL查询的优化方法/">30条MySQL查询的优化方法</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-11-13T05:46:00.000Z" itemprop="datePublished">
+          2018-11-13
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        1、应尽量避免在 where 子句中使用!=或&lt;&gt;操作符，否则将引擎放弃使用索引而进行全表扫描。
+2、对查询进行优化，首先应考虑在 where 及 order by 涉及的列上建立索引，避免全表扫描。
+3、应尽量避免在 where 子句中对字段进行 null 值判断，否则将导致引擎放弃使用索引，而进行全表扫描，如：
+1select id from t where num is null
+可以在num上设置默认值0，确保表中n
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/11/13/30条MySQL查询的优化方法/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/11/13/10个常见的HTTP状态码/">10个常见的HTTP状态码</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-11-13T05:30:00.000Z" itemprop="datePublished">
+          2018-11-13
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        HTTP状态码是用以表示网页服务器HTTP响应状态的3位数字代码。所有状态码的第一个数字代表了响应的五种状态之一。当用户试图通过HTTP或FTP协议访问一台运行主机上的内容时，Web服务器返回一个表示该请求的状态的数字代码。该状态代码记录在服务器日志中，同时也可能在 Web 浏览器或 FTP客户端显示。也就是我们打开页面发生错误时，浏览器显示的错误信息代码。状态代码可以指明具体请求是否已成功，还可以揭示请求失败的确切原因。
+HTTP协议
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/11/13/10个常见的HTTP状态码/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/11/13/MVC、OOP、ORM、CURD、ActiveRecord、单一入口/">MVC、OOP、ORM、CURD、ActiveRecord、单一入口</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-11-13T05:30:00.000Z" itemprop="datePublished">
+          2018-11-13
+      </time>
+    
+    
+    | 
+    <a href="/tags/Nginx/">Nginx</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        1 MVCMVC是一个设计模式，它强制性的使应用程序的输入、处理和输出分开。使用MVC应用程序被分成三个核心部件：模型（M）、视图（V）、控制器（C），它们各自处理自己的任务。
+视图：视图是用户看到并与之交互的界面。对老式的Web应用程序来说，视图就是由HTML元素组成的界面，在新式的Web应用程序中，HTML依旧在视图中扮演着重要的角色，但一些新的技术已层出不穷，它们包括Adobe Flash和象XHTML，XML/XSL，WML等一
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/11/13/MVC、OOP、ORM、CURD、ActiveRecord、单一入口/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/11/13/Nginx和php-fpm/">Nginx和php-fpm.md</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-11-13T04:30:00.000Z" itemprop="datePublished">
+          2018-11-13
+      </time>
+    
+    
+    | 
+    <a href="/tags/CGI-FAST-CGI/">CGI,FAST-CGI</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        CGI和FAST-CGIcgi是web server保证web server传递过来的数据是标准格式的协议。
+当web服务器接收到请求，会启动对应的CGI程序，比如php的解释器，php解释器会解析php.ini，初始化执行环境，然后处理请求，再按照CGI规定的格式返回处理后的结果，退出进程，web服务器将数据传递给浏览器。
+fast-cgi是用来提高cgi性能的
+因为每一个请求都会需要执行php的解释器，php解释器会解析php.in
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/11/13/Nginx和php-fpm/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -405,13 +544,12 @@ HTTP协议的作用HTTP是一个客户端终端（用户）和服务器端（网
                 <div class="col-md-8">
                     <p>
                       
-                        工厂模式 
-1。创建工厂类 
+                        工厂模式1。创建工厂类 
 2。在类中创建相关操作的静态类，return出相应的new之后的对象。 
 例：12345class factory &#123; 	static function createDtabase($new)&#123; 		return new $new; 	&#125;&#125;
 使用工厂模式对于共用的类可以不会因为修改而产生互相的影响。 
-单列模式 1。私有化构造方法。 
-2。创建一个静态方法，在静态方法
+单列模式1。私有化构造方法。 
+2。创建一个静态方法，在静态方法new
                       
                     </p>
                     
@@ -447,141 +585,6 @@ HTTP协议的作用HTTP是一个客户端终端（用户）和服务器端（网
                     
                     <p class="pull-right readMore">
                         <a href="/2018/02/28/开启TCP BBR拥塞控制算法/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/06/09/Mac关闭开启摄影头/">Mac关闭开启摄影头</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-06-09T11:29:12.000Z" itemprop="datePublished">
-          2017-06-09
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        1打开终端逐行输入: sudo chmod a-r /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/Resources/VDC.plugin/Contents/MacOS/VDC sudo chmod a-r /System/Library/PrivateFrameworks/CoreMediaIOServicesPrivate.framework/Versions
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/06/09/Mac关闭开启摄影头/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/10/02/在PHP中使用AES加密算法加密数据/">在PHP中使用AES加密算法加密数据</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-10-02T08:21:34.000Z" itemprop="datePublished">
-          2016-10-02
-      </time>
-    
-    
-    | 
-    <a href="/tags/php/">php</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        在研究Discuz 的时候，发现Discuz有一套相当完美的加密算法(相对而言)。这个算法可以将数据加密后，储存起来，到需要用的时候，用之前加密的秘钥将之还原。 除了这个之外，还有AES这个算法能够将数据很好的加密起来，在传输过程中不容易被破解。 在PHP中，我们必须先安装好mcrypt这个模块，并且添加相应版本的扩展到php中，详情可以看 不重新编译PHP安装Mcrypt扩展 AES加密模式和填充方式有以下之中，但不是全部 算法/模式
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/10/02/在PHP中使用AES加密算法加密数据/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/10/02/MySQL性能优化总结/">MySQL性能优化总结</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-10-02T08:17:34.000Z" itemprop="datePublished">
-          2016-10-02
-      </time>
-    
-    
-    | 
-    <a href="/tags/mysql优化/">mysql优化</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        一、MySQL的主要适用场景 1、Web网站系统 2、日志记录系统 3、数据仓库系统 4、嵌入式系统 二、MySQL架构图 三、MySQL存储引擎概述 1）MyISAM存储引擎 MyISAM存储引擎的表在数据库中，每一个表都被存放为三个以表名命名的物理文件。首先肯定会有任何存储引擎都不可缺少的存放表结构定义信息的.frm文件，另外还有.MYD和.MYI文件，分别存放了表的数据（.MYD）和索引数据（.MYI）。每个表都有且仅有这样三个文
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/10/02/MySQL性能优化总结/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/05/29/Mac下VirtualBox虚拟机Win7与主机共享文件夹/">Mac下VirtualBox虚拟机Win7与主机共享文件夹</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-05-29T13:46:22.000Z" itemprop="datePublished">
-          2016-05-29
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        1.启动virtualbox，选中虚拟机，点击设置，点击共享文件夹；
-2.点击右侧按钮添加共享文件夹；
-3.选择共享文件夹路径（mac路径），自动挂载，固定分配两个勾选。
-4.VBoxGuestAdditions_5.0.0.iso下载地址
-http://download.virtualbox.org/virtualbox/5.0.0/
-5.启动VirtualBox，启动win7虚拟机，点击菜单Devices，点击Optical Dev
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/05/29/Mac下VirtualBox虚拟机Win7与主机共享文件夹/">Read More...</a>
                     </p>
                     
                 </div>
