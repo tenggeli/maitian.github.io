@@ -95,19 +95,21 @@
 				    
 				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
 				    
-				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(8)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/Nginx/" class="animsition-link">Nginx<small>(2)</small></a></li>
 				    
+				    <li><a href="/categories/PHP/" class="animsition-link">PHP<small>(2)</small></a></li>
+				    
 				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
-				    
-				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
 				    
@@ -125,19 +127,19 @@
 				    
 				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
-				    
 				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -256,6 +258,101 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/02/28/PHP防止mysql注入攻击/">PHP防止mysql注入攻击</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-02-28T10:25:19.000Z" itemprop="datePublished">
+          2018-02-28
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        很多web平台在接受参数时，为进行严格的参数验证，导致数据库接收到一堆垃圾数据，甚至数据库访问权限被恶意访问者获取。 示例参考http://php.net/manual/zh/security.database.sql-injection.php 防范这些sql注入的基本流程。 1.输入参数的验证 类型验证或者进行强制的类型设置。 isset — 检测变量是否已设置并且非 NULL empty — 检查一个变量是否为空 is_numer
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/02/28/PHP防止mysql注入攻击/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/02/28/简单设计模式/">简单设计模式</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-02-28T07:14:20.000Z" itemprop="datePublished">
+          2018-02-28
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        工厂模式1。创建工厂类 
+2。在类中创建相关操作的静态类，return出相应的new之后的对象。 
+例：12345class factory &#123; 	static function createDtabase($new)&#123; 		return new $new; 	&#125;&#125;
+使用工厂模式对于共用的类可以不会因为修改而产生互相的影响。 
+单列模式1。私有化构造方法。 
+2。创建一个静态方法，在静态方法new
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/02/28/简单设计模式/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/02/28/开启TCP BBR拥塞控制算法/">开启TCP BBR拥塞控制算法</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-02-28T07:07:12.000Z" itemprop="datePublished">
+          2018-02-28
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        开启TCP BBR拥塞控制算法 BBR 目的是要尽量跑满带宽, 并且尽量不要有排队的情况, 效果并不比速锐差 Linux kernel 4.9+ 已支持 tcp_bbr 下面简单讲述基于KVM架构VPS如何开启 附: OpenVZ 架构VPS开启BBR （容易导致判定滥用ban机，慎用！) Debian/Ubuntu TCP BBR 魔改版 Debian 8+ / Ubuntu 14 下载最新内核,最新内核查看这里 wget http:
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/02/28/开启TCP BBR拥塞控制算法/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -502,115 +599,6 @@ Remote：远程仓库
                     
                     <p class="pull-right readMore">
                         <a href="/2016/04/09/常用 Git 命令清单/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/03/24/PHP实现各种排序算法/">PHP实现各种排序算法</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-03-23T23:26:46.000Z" itemprop="datePublished">
-          2016-03-24
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        冒泡排序：时间复杂度O()
-
-比较相邻的元素。如果第一个比第二个大，就交换他们两个。
-对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。
-针对所有的元素重复以上的步骤，除了最后一个。
-持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 
-
-12345678910111213141516//冒泡排序数组$a = array(5,8,4,7,12,6,3,9);for($i 
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/03/24/PHP实现各种排序算法/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/03/23/MongoDB数据库未授权访问漏洞/">MongoDB数据库未授权访问漏洞</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-03-23T01:20:17.000Z" itemprop="datePublished">
-          2016-03-23
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        具体事宜如下所示：
-1、漏洞危害
-开启MongoDB服务时不添加任何参数时,默认是没有权限验证的,登录的用户可以通过默认端口无需密码对数据库任意操作而且可以远程访问数据库！
-2、漏洞成因   在刚安装完毕的时候MongoDB都默认有一个admin数据库,此时admin数据库是空的,没有记录权限相关的信息！当admin.system.users一个用户都没有时，即使mongod启动时添加了–auth参数,如果没有在admin数据库中添加用
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/03/23/MongoDB数据库未授权访问漏洞/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/03/18/MySQL的学习--触发器/">MySQL的学习--触发器</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-03-18T08:25:09.000Z" itemprop="datePublished">
-          2016-03-18
-      </time>
-    
-    
-    | 
-    <a href="/tags/触发器/">触发器</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        MySQL包含对触发器的支持。触发器是一种与表操作有关的数据库对象，当触发器所在表上出现指定事件时，将调用该对象，即表的操作事件触发表上的触发器的执行。
-创建触发器在MySQL中，创建触发器语法如下：
-CREATE TRIGGER trigger_nametrigger_timetrigger_event ON tbl_name FOR EACH ROWtrigger_stmt
-其中：
-trigger_name：标识触发器名称，用户自行
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/03/18/MySQL的学习--触发器/">Read More...</a>
                     </p>
                     
                 </div>

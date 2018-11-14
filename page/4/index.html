@@ -95,19 +95,21 @@
 				    
 				    <li><a href="/categories/Linux/MYSQL/" class="animsition-link">MYSQL<small>(2)</small></a></li>
 				    
-				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(7)</small></a></li>
+				    <li><a href="/categories/MYSQL/" class="animsition-link">MYSQL<small>(8)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MongoDB/" class="animsition-link">MongoDB<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/Nginx/" class="animsition-link">Nginx<small>(2)</small></a></li>
 				    
+				    <li><a href="/categories/PHP/" class="animsition-link">PHP<small>(2)</small></a></li>
+				    
 				    <li><a href="/categories/jquery-amp-htm-amp-js/" class="animsition-link">jquery&amp;amp;htm&amp;amp;js<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/php/" class="animsition-link">php<small>(14)</small></a></li>
 				    
 				    <li><a href="/categories/Linux/MYSQL/php/" class="animsition-link">php<small>(1)</small></a></li>
-				    
-				    <li><a href="/categories/Linux/php/" class="animsition-link">php<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/佛学/" class="animsition-link">佛学<small>(3)</small></a></li>
 				    
@@ -125,19 +127,19 @@
 				    
 				    <li><a href="/categories/来自电影/" class="animsition-link">来自电影<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
-				    
 				    <li><a href="/categories/php/算法/" class="animsition-link">算法<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
-				    
 				    <li><a href="/categories/Linux/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(4)</small></a></li>
 				    
-				    <li><a href="/categories/Linux/MYSQL/php/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
+				    <li><a href="/categories/MYSQL/黑客-amp-骇客/" class="animsition-link">黑客&amp;amp;骇客<small>(1)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -256,6 +258,117 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2016/02/25/Redis学习手册(服务器管理)/">Redis学习手册(服务器管理)</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2016-02-25T04:30:54.000Z" itemprop="datePublished">
+          2016-02-25
+      </time>
+    
+    
+    | 
+    <a href="/tags/Redis/">Redis</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        Redis在设计之初就被定义为长时间不间断运行的服务进程，因此大多数系统配置参数都可以在不重新启动进程的情况下立即生效。即便是将当前的持久化模式从AOF切换到RDB也无需重启。  
+
+在Redis中，提供了一组和服务器管理相关的命令，其中就包含和参数设置有关的CONFIG SET/GET command。
+CONFIG**GET**parameter 
+主要用于读取服务器的运行时参数，但是并不是所有的配置参数都可以通过该命令进行读取。其
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2016/02/25/Redis学习手册(服务器管理)/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2016/02/25/Redis学习手册(虚拟内存)/">Redis学习手册(虚拟内存)</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2016-02-25T04:02:19.000Z" itemprop="datePublished">
+          2016-02-25
+      </time>
+    
+    
+    | 
+    <a href="/tags/Redis/">Redis</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        一、简介：  
+和大多NoSQL数据库一样，Redis同样遵循了Key/Value数据存储模型。在有些情况下，Redis会将Keys/Values保存在内存中以提高数据查询和数据修改的效率，然而这样的做法并非总是很好的选择。鉴于此，我们可以将之进一步优化，即尽量在内存中只保留Keys的数据，这样可以保证数据检索的效率，而Values数据在很少使用的时候则可以被换出到磁盘。  
+在实际的应用中，大约只有10%的Keys属于相对比较常用的键
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2016/02/25/Redis学习手册(虚拟内存)/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2016/02/25/Redis学习手册(持久化)/">Redis学习手册(持久化)</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2016-02-25T03:54:45.000Z" itemprop="datePublished">
+          2016-02-25
+      </time>
+    
+    
+    | 
+    <a href="/tags/Redis/">Redis</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        一、Redis提供了哪些持久化机制：    1). RDB持久化：    该机制是指在指定的时间间隔内将内存中的数据集快照写入磁盘。    2). AOF持久化:    该机制将以日志的形式记录服务器所处理的每一个写操作，在Redis服务器启动之初会读取该文件来重新构建数据库，以保证启动后数据库中的数据是完整的。    3). 无持久化：    我们可以通过配置的方式禁用Redis服务器的持久化功能，这样我们就可以将Redis视为一个功
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2016/02/25/Redis学习手册(持久化)/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -506,125 +619,6 @@ _    #在Shell命令行启动Red
                     
                     <p class="pull-right readMore">
                         <a href="/2016/02/16/Redis学习手册(List数据类型)/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/02/16/Redis学习手册(String数据类型)/">Redis学习手册(String数据类型)</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-02-16T07:22:50.000Z" itemprop="datePublished">
-          2016-02-16
-      </time>
-    
-    
-    | 
-    <a href="/tags/Redis/">Redis</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                          字符串类型是Redis中最为基础的数据存储类型，它在Redis中是二进制安全的，这便意味着该类型可以接受任何格式的数据，如JPEG图像数据或Json对象描述信息等。在Redis中字符串类型的Value最多可以容纳的数据长度是512M。
-  1. SET/GET/APPEND/STRLEN:
-_ /> redis-cli   #执行Redis客户端工具。_    redis 127.0.0.1:6379&gt; exists myke
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/02/16/Redis学习手册(String数据类型)/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/01/26/svn钩子实现自动更新至测试服务器/">svn钩子实现自动更新至测试服务器</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-01-26T07:47:00.000Z" itemprop="datePublished">
-          2016-01-26
-      </time>
-    
-    
-    | 
-    <a href="/tags/SVN/">SVN</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        svn钩子是什么：  svn有很多个钩子，这些钩子其实就是一些辅助程序或小工具。
-他们通常在svn版本仓库的hooks文件夹下面：
-post-commit
-在提交完成，成功创建版本之后执行该钩子，提交已经完成，不可更改，因此本脚本的返回值被忽略。
-post-lock对文件进行加锁操作之后执行该脚本
-post-revprop-change在修改 revision 属性之后，执行该脚本。因为修改稿已经完成，不可更改，因此本脚本的返回值被忽略
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/01/26/svn钩子实现自动更新至测试服务器/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/01/26/Xhprof安装与使用/">Xhprof安装与使用</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-01-26T07:35:55.000Z" itemprop="datePublished">
-          2016-01-26
-      </time>
-    
-    
-    | 
-    <a href="/tags/php/">php</a>,
-    
-    <a href="/tags/性能监控/">性能监控</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        安装Xhprof是一个PHP扩展，安装方式与一般PHP扩展一致。
-1.从这里下载最新的源码包。假设解压缩后的文件夹为xhprof
-2.编译安装
-cd xhprof/extension/path/to/php/bin/phpize./configure –with-php-config=/path/to/php/bin/php-configmakemake install
-3.配置php.ini，添加以下几行：
-[xhprof]exten
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/01/26/Xhprof安装与使用/">Read More...</a>
                     </p>
                     
                 </div>
